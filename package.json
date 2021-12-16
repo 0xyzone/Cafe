@@ -1,0 +1,24 @@
+{
+  "name": "cafe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "tailwindcss": "^3.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "tailwindcss -i src/styles.css -o public/css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xyzone/Cafe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xyzone/Cafe/issues"
+  },
+  "homepage": "https://github.com/0xyzone/Cafe#readme",
+  "description": ""
+}
