@@ -10,20 +10,18 @@ const disableDarkMode = () => {
 
 if (Mode === 'dark'){
     enableDarkMode();
-    $('#toggle').html('<i class="far fa-sun text-amber-500 font-extralight"></i>');
+    $('#toggle').html('<i class="far fa-sun text-amber-500 text-2xl"></i>');
     $('#toggle').val('light');
 } 
 
 $('#toggle').click(function(){
     Mode = localStorage.getItem('Mode');
-    console.log(Mode);
-    console.log('hi');
     if($('#toggle').val() == 'dark'){
-        $('#toggle').html('<i class="far fa-sun text-amber-500 font-light"></i>');
+        $('#toggle').html('<i class="far fa-sun text-amber-500 text-2xl"></i>');
         $('#toggle').val('light');
         enableDarkMode();
     } else if($('#toggle').val() == 'light') {
-        $('#toggle').html('<i class="far fa-moon-stars"></i>');
+        $('#toggle').html('<i class="far fa-moon-stars text-2xl"></i>');
         $('#toggle').val('dark');
         disableDarkMode();
     }
