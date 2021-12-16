@@ -1,6 +1,3 @@
-<script>
-    
-</script>
 <?php
 session_start();
 include "globalvar.php";
@@ -18,6 +15,7 @@ $customcss = $site.'css/custom.css';
     <link rel="stylesheet" href="<?php echo $customcss; ?>">
     <link rel="stylesheet" href="<?php echo $site.'css/css/all.css'?>">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
     <title>
         <?php
         if (isset($title)) {
@@ -30,12 +28,5 @@ $customcss = $site.'css/custom.css';
 </head>
 <body class="w-screen h-screen bg-gray-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300">
     
-    <button class="absolute top-2 right-2 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 w-8 h-8 flex gap-2 rounded-full justify-center items-center" id="toggle" value="dark">
-    <i class="far fa-moon-stars"></i>
-    </button>
-    
-    
-    <script src="js/darkmode.js">
-        
-    </script>
-    
+    <button class="absolute top-5 right-5 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 w-8 h-8 flex gap-2 rounded-full justify-center items-center" id="toggle" value="dark"><i class="far fa-moon-stars"></i></button>
+    <script src="<?php echo $site.'js/darkmode.js';?>"></script>

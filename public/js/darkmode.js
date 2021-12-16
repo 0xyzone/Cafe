@@ -17,6 +17,7 @@ if (Mode === 'dark'){
 $('#toggle').click(function(){
     Mode = localStorage.getItem('Mode');
     console.log(Mode);
+    console.log('hi');
     if($('#toggle').val() == 'dark'){
         $('#toggle').html('<i class="far fa-sun text-amber-500 font-light"></i>');
         $('#toggle').val('light');
