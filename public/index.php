@@ -31,7 +31,7 @@ include 'includes/globalvar.php';
         
         <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-2 mx-auto">
             <?php foreach($superadmin as $btn):?>
-                <a href="<?php echo $btn['2'] ?>" class="bigbtn flex gap-2 items-center" id="<?php echo $btn['3']?>">
+                <a href="<?php echo $site.'admin?option='.$btn['2'] ?>" class="bigbtn flex gap-2 items-center" id="<?php echo $btn['3']?>">
                     <?php echo $btn['1'] ?>
                     <?php echo $btn['0'] ?>
                 </a>

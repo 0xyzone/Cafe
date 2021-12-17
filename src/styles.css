@@ -6,6 +6,9 @@
     .bodymain {
         @apply flex justify-center items-center w-full h-full;
     }
+    .tables {
+        @apply bg-gray-500 text-gray-100 dark:text-gray-400 dark:bg-gray-700 w-auto px-8 pt-8 pb-16 lg:w-auto rounded-xl flex flex-col gap-8 transform duration-300 mainshadow;
+    }
     .forminputs {
         @apply text-2xl flex flex-col justify-between gap-2;
     }

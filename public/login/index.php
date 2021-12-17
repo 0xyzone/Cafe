@@ -31,7 +31,6 @@ include '../security/validation.php';
                     <input type="password" name="password" id="password" class="fields" placeholder="**********" autocomplete="off" class="">
                     <div class="absolute right-2 text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300 transform duration-300 ease-in-out cursor-pointer" id="eye" title="Show password"><i class="fad fa-eye"></i></div>
                 </div>
-                
             </div>
         </div>
         
