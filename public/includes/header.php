@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "globalvar.php";
+include "btns.php";
 $tailwind = $site.'css/tailwind.css';
 $customcss = $site.'css/custom.css';
 ?>
@@ -14,6 +15,7 @@ $customcss = $site.'css/custom.css';
     <link rel="stylesheet" href="<?php echo $customcss; ?>">
     <link rel="stylesheet" href="<?php echo $site.'css/css/all.css'?>">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
     <title>
         <?php
@@ -25,7 +27,7 @@ $customcss = $site.'css/custom.css';
         ?>
     </title>
 </head>
-<body class="w-screen h-screen bg-gray-300 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-gray-100">
+<body class="w-screen h-screen bg-gray-300 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800">
     <div class="">
         <button class="absolute top-4 right-5 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
         

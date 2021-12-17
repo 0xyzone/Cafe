@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
         $err = "Please enter your password!";
     }
     if (($uname == "") && ($pw == "")){
-        $err = "Arey kei ta lekhana hau!";
+        $err = "Fields are empty!";
     } else {
         if ((!empty($_POST['username'])) && (!empty($_POST['password']))){
             $username = $_POST['username'];
