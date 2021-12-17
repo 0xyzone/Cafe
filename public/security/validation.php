@@ -1,6 +1,6 @@
 <?php
 include '../includes/dbconnection.php';
-if ($_POST){
+if(isset($_POST['login'])){
     $uname = $_POST['username'];
     $pw = $_POST['password'];
     

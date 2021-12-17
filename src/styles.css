@@ -10,10 +10,10 @@
         @apply text-2xl flex flex-col justify-between gap-2;
     }
     .forms {
-        @apply bg-gray-600 text-gray-100 dark:text-gray-700 dark:bg-gray-100 w-8/12 px-8 pt-8 pb-16 lg:w-3/12 rounded-xl flex flex-col gap-8 transform duration-300;
+        @apply bg-gray-500 text-gray-100 dark:text-gray-400 dark:bg-gray-700 w-8/12 px-8 pt-8 pb-16 lg:w-3/12 rounded-xl flex flex-col gap-8 transform duration-300;
     }
     .fields {
-        @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-zinc-400 transform duration-300;
+        @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-lime-600 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none outline-none;
     }
     .btn-primary {
         @apply bg-lime-500 dark:bg-lime-600 dark:text-gray-200 px-4 py-2 text-2xl rounded-xl transform duration-300;
