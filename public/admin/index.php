@@ -13,8 +13,9 @@ if (isset($_GET['option'])){
 
 $usersql = mysqli_query($db,"SELECT * FROM userbase ORDER BY ID ASC");
 
-if (isset($_POST['update'])){
-    
+if (isset($_GET['delete'])){
+    $delid = $_GET['delete'];
+    $delete = 
 }
 ?>
 
@@ -42,7 +43,7 @@ if (isset($_POST['update'])){
                         <td class="px-2 text-left select-all"><?php echo $row['username']; ?></td>
                         <td class="px-2 text-left select-all"><?php echo $row['password']; ?></td>
                         <td class="px-2 text-center text-lime-500 dark:text-lime-500"><a href="<?php echo $site.'admin/?edit='.$row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
-                        <td class="px-5 text-center text-red-500 dark:text-rose-500"><a href=""><i class="fad fa-trash"></i></a></td>
+                        <td class="px-5 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site.'admin/?delete='.$row['ID']; ?>"><i class="fad fa-trash"></i></a></td>
                     </tr>
                     <?php endforeach;?>
                 </body>
