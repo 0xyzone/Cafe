@@ -1,5 +1,5 @@
 <?php
 date_default_timezone_set('Asia/Kathmandu');
-$time = date("g : i A");
+$time = date("g : i : s A");
 echo $time;
 ?>

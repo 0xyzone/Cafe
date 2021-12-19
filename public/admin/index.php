@@ -4,6 +4,8 @@ include '../includes/globalvar.php';
 include '../includes/dbconnection.php';
 include '../includes/header.php';
 
+$usersql = mysqli_query($db,"SELECT * FROM userbase ORDER BY ID ASC");
+
 if (isset($_GET['option'])){
     if ($_GET['option'] == "take_orders"){
         $orders = $site.'orders';
@@ -11,13 +13,31 @@ if (isset($_GET['option'])){
     }
 }
 
-$usersql = mysqli_query($db,"SELECT * FROM userbase ORDER BY ID ASC");
-
+//deleting a user
 if (isset($_GET['delete'])){
     $delid = $_GET['delete'];
-    $delete = 
+    $db->query("DELETE FROM userbase WHERE id=$delid");
+    $_SESSION['message'] = "Item deleted successfully!";
+    header('location:'.$site.'admin?option=updateusers');
+}
+
+//updating a user
+if (isset($_POST['update'])){
+    $id = $_POST['id'];
+    $uname = $_POST['username'];
+    $pw = $_POST['password'];
+    $db->query("UPDATE userbase SET username='$uname', password='$pw'");
+    $_SESSION['message'] = "User updated successfully!";
 }
 ?>
+
+<?php if (isset($_SESSION['message'])):?>
+    <div class="w-full flex justify-center absolute top-20 lg:top-48 animate-bounce">
+        <div id="success" class="bg-green-100 dark:bg-lime-200 text-green-400 dark:text-lime-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
+            <?php echo $_SESSION['message']; ?>
+        </div>
+    </div>
+<?php endif; ?>
 
 <!-- Users list -->
 <?php if (isset($_GET['option']) && ($_GET['option'] == "updateusers")): ?>
@@ -53,7 +73,7 @@ if (isset($_GET['delete'])){
 <?php endif; ?>
 <!-- end Users list -->
 
-<!-- Updating a user -->
+<!-- Editing a user -->
 <?php if (isset($_GET['edit'])): ?>
     <?php
     $id = $_GET['edit'];
@@ -62,6 +82,7 @@ if (isset($_GET['delete'])){
     ?>
     <div class="bodymain">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="text-4xl font-bold">
                 <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> User update
             </div>
@@ -84,4 +105,10 @@ if (isset($_GET['delete'])){
 
     </div>
 <?php endif; ?>
-<!-- end Updating a user -->
+<!-- end Editing a user -->
+
+<script>
+    setTimeout(function() {
+        $('#sucess').fadeOut('slow');
+    }, 3000); // <-- time in milliseconds
+</script>
