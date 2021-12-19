@@ -72,15 +72,15 @@ if (isset($_POST['update'])){
                 <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> Users
             </div>
             <table class="table-auto border-collapse text-lg lg:text-2xl">
-                <head>
+                <thead>
                     <tr class="bg-green-700 text-gray-200 dark:bg-lime-600 rounded-lg font-bold">
                         <th class="px-4 rounded-l-lg">ID</th>
                         <th class=" px-2 text-left">Username</th>
                         <th class=" px-2 text-left">Password</th>
                         <th class="px-4 rounded-r-lg text-left" colspan="2">Actions</th>
                     </tr>
-                </head>
-                <body>
+                </thead>
+                <tbody id="users">
                     <?php foreach ($usersql as $row):?>
                     <tr>
                         <td class="px-4 text-right"><?php echo $row['ID']; ?></td>
@@ -90,10 +90,17 @@ if (isset($_POST['update'])){
                         <td class="px-4 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site.'admin/?delete='.$row['ID']; ?>"><i class="fad fa-trash"></i></a></td>
                     </tr>
                     <?php endforeach;?>
-                </body>
+                </tbody>
             </table>
         </div>
     </div>
+    <script>
+    setInterval(function(){
+        $.ajax({url: "<?php echo $site?>includes/ajax/users.php", success: function(response){
+            $('#users').html(response)
+        }});
+    }, 1000);
+</script>
 <?php endif; ?>
 <!-- end Users list -->
 

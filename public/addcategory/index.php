@@ -97,7 +97,7 @@ if (!isset($_SESSION['user'])){
 ?>
 <script>
     setInterval(function(){
-        $.ajax({url: "<?php echo $site?>includes/categories.php", success: function(response){
+        $.ajax({url: "<?php echo $site?>includes/ajax/categories.php", success: function(response){
             $('#categories').html(response)
         }});
     }, 0);

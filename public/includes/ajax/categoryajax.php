@@ -1,6 +1,6 @@
 <?php
-include 'dbconnection.php';
-include 'globalvar.php';
+include '../dbconnection.php';
+include '../globalvar.php';
 $usersql = mysqli_query($db,"SELECT * FROM category ORDER BY ID ASC");
 
 ?>

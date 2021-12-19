@@ -131,7 +131,7 @@ if(isset($_GET['delete'])){
 </div>
 <script>
     setInterval(function(){
-        $.ajax({url: "<?php echo $site?>includes/categoryajax.php", success: function(response){
+        $.ajax({url: "<?php echo $site?>includes/ajax/categoryajax.php", success: function(response){
             $('#categories').html(response)
         }});
     }, 500);

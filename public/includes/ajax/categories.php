@@ -1,5 +1,5 @@
 <?php
-include 'dbconnection.php';
+include '../dbconnection.php';
 $usersql = mysqli_query($db,"SELECT * FROM category ORDER BY ID DESC LIMIT 3");
 
 ?>

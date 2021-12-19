@@ -51,8 +51,8 @@ include 'includes/globalvar.php';
 <?php endif; ?>
 <script>
     setInterval(function(){
-        $.ajax({url: "<?php echo $site?>includes/time.php", success: function(response){
+        $.ajax({url: "<?php echo $site?>includes/ajax/time.php", success: function(response){
             $('#time').html(response)
         }});
-    }, 1000);
+    }, 50);
 </script>
