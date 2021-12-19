@@ -19,7 +19,7 @@ if (!isset($_SESSION['user'])){
             //check if category already exists
             $check = mysqli_query($db,"SELECT * FROM category WHERE category = '$category'");
             if (mysqli_num_rows($check) > 0){
-                $err = "Category already exists. Please add something else.";
+                $err = "Category already exists.";
             } else {
                 $update = ("INSERT INTO category (category, html_id) VALUES ('$category', '$html_id')");
                 if ($db->query($update) === TRUE){
@@ -36,14 +36,14 @@ if (!isset($_SESSION['user'])){
 ?>
 <!-- Notifications/Alerts -->
 <?php if (isset($_SESSION['message'])):?>
-    <div class="w-full flex justify-center absolute top-16 lg:top-28 animate-bounce">
+    <div class="w-full flex justify-center absolute top-10 lg:top-24 animate-bounce">
         <div id="success" class="bg-green-100 dark:bg-lime-200 text-green-400 dark:text-lime-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
             <?php echo $_SESSION['message']; unset($_SESSION['message']) ?>
         </div>
     </div>
 <?php endif; ?>
 <?php if (isset($err)):?>
-    <div class="w-full flex justify-center absolute top-16 lg:top-28 animate-bounce">
+    <div class="w-full flex justify-center absolute top-10 lg:top-24 animate-bounce">
         <div id="err" class="bg-rose-100 dark:bg-rose-200 text-rose-400 dark:text-rose-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
             <?php echo $err; ?>
         </div>
@@ -81,13 +81,20 @@ if (!isset($_SESSION['user'])){
         </div>
         <table class="table-auto border-collapse text-lg lg:text-2xl">
             <thead>
-                <tr class="bg-green-700 text-gray-200 dark:bg-lime-600 rounded-lg font-bold">
+                <tr class="thead">
                     <th class="px-4 py-2 rounded-l-lg">ID</th>
                     <th class=" px-2 text-left w-48 md:w-52 lg:w-64">Category</th>
                     <th class=" px-4 text-left rounded-r-lg">html_id</th>
                 </tr>
             </thead>
             <tbody id="categories">
+                <?php foreach ($usersql as $row):?>
+                    <tr class='tbrow'>
+                        <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
+                        <td class="px-2 text-left"><?php echo $row['category']; ?></td>
+                        <td class="px-2 text-left"><?php echo $row['html_id']; ?></td>
+                    </tr>
+                <?php endforeach;?>
             </tbody>
         </table>
     </div>

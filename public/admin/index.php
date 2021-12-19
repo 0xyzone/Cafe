@@ -73,7 +73,7 @@ if (isset($_POST['update'])){
             </div>
             <table class="table-auto border-collapse text-lg lg:text-2xl">
                 <thead>
-                    <tr class="bg-green-700 text-gray-200 dark:bg-lime-600 rounded-lg font-bold">
+                    <tr class="thead">
                         <th class="px-4 rounded-l-lg">ID</th>
                         <th class=" px-2 text-left">Username</th>
                         <th class=" px-2 text-left">Password</th>
@@ -82,7 +82,7 @@ if (isset($_POST['update'])){
                 </thead>
                 <tbody id="users">
                     <?php foreach ($usersql as $row):?>
-                    <tr>
+                    <tr class="tbrow">
                         <td class="px-4 text-right"><?php echo $row['ID']; ?></td>
                         <td class="px-2 text-left select-all"><?php echo $row['username']; ?></td>
                         <td class="px-2 text-left select-all"><?php echo $row['password']; ?></td>

@@ -19,7 +19,7 @@
         @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-green-700 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none outline-none hover:mainshadow;
     }
     .btn-primary {
-        @apply bg-green-500 text-gray-50 dark:bg-lime-600 dark:text-gray-200 px-4 py-2 text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
+        @apply bg-lime-600 text-gray-50 dark:bg-lime-600 dark:text-gray-200 px-4 py-2 text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
     }
     .btn-secondary {
         @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-gray-200 dark:text-emerald-600 border-2 border-current;
@@ -28,12 +28,18 @@
         @apply shadow-[10px_10px_8px_0px_rgba(0,0,0,0.2)];
     }
     .bigbtn {
-        @apply w-full lg:w-full h-24 text-gray-300 bg-green-600 dark:bg-lime-600 rounded-lg text-2xl lg:text-4xl font-semibold flex items-center pl-5 text-left cursor-pointer hover:mainshadow hover:-translate-y-1 transform duration-300;
+        @apply w-full lg:w-full h-24 text-gray-300 bg-lime-600 dark:bg-lime-600 rounded-lg text-2xl lg:text-4xl font-semibold flex items-center pl-5 text-left cursor-pointer hover:mainshadow hover:-translate-y-1 transform duration-300;
     }
     .title {
         @apply text-4xl font-bold;
     }
     .secondtitle {
         @apply text-2xl font-bold;
+    }
+    .thead {
+        @apply bg-lime-600 text-gray-200 dark:bg-lime-600 rounded-lg font-bold;
+    }
+    .tbrow {
+        @apply border-y-8 border-y-transparent;
     }
 };
