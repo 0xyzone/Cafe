@@ -14,7 +14,7 @@ include '../security/validation.php';
         </div>
     </div>
 <?php endif ?>
-<div class="bodymain">
+<div class="bodymain fadeInBottom">
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms">
         <div class="text-4xl font-bold">

@@ -5,7 +5,7 @@ include 'includes/globalvar.php';
 ?>
 <?php if (isset($_SESSION['user'])): ?>
     <div class="lg:w-6/12 w-8/12 h-full mx-auto flex flex-col justify-center gap-10">
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 fadeInLeft">
             <h1 class="text-6xl">
                 <?php
                     date_default_timezone_set('Asia/Kathmandu');
@@ -29,7 +29,7 @@ include 'includes/globalvar.php';
         </div>
         
         
-        <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-2 mx-auto">
+        <div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom">
             <?php foreach($superadmin as $btn):?>
                 <a href="<?php echo $site.'admin?option='.$btn['2'] ?>" class="bigbtn flex gap-2 items-center" id="<?php echo $btn['3']?>">
                     <?php echo $btn['1'] ?>
