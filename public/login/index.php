@@ -7,13 +7,7 @@ include '../security/validation.php';
 <?php if (isset($_SESSION['user'])){
     header('location:'.$site);
 } else {?>
-<?php if (isset($err)):?>
-    <div class="w-full flex justify-center absolute top-20 lg:top-48 animate-bounce">
-        <div id="err" class="bg-rose-100 dark:bg-rose-200 text-rose-400 dark:text-rose-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
-            <?php echo $err; ?>
-        </div>
-    </div>
-<?php endif ?>
+<?php include '../includes/alerts.php'; ?>
 <div class="bodymain fadeInBottom">
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="forms">

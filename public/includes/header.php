@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Kathmandu');
 include "globalvar.php";
 include "btns.php";
 $tailwind = $site.'css/tailwind.css';

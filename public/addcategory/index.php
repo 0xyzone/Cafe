@@ -34,30 +34,7 @@ if (!isset($_SESSION['user'])){
     }
     //if form submitted
 ?>
-<!-- Notifications/Alerts -->
-<?php if (isset($_SESSION['message'])):?>
-    <div class="w-full flex justify-center absolute top-10 lg:top-24 animate-bounce">
-        <div id="success" class="bg-green-100 dark:bg-lime-200 text-green-400 dark:text-lime-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
-            <?php echo $_SESSION['message']; unset($_SESSION['message']) ?>
-        </div>
-    </div>
-<?php endif; ?>
-<?php if (isset($err)):?>
-    <div class="w-full flex justify-center absolute top-10 lg:top-24 animate-bounce">
-        <div id="err" class="bg-rose-100 dark:bg-rose-200 text-rose-400 dark:text-rose-700 border-2 border-current text-lg px-4 py-2 rounded-lg w-max fadeInTop">
-            <?php echo $err; ?>
-        </div>
-    </div>
-<?php endif ?>
-<script>
-    setTimeout(function() {
-        $('#err').fadeOut('slow');
-    }, 3000); // <-- time in milliseconds
-    setTimeout(function() {
-        $('#success').fadeOut('slow');
-    }, 3000); // <-- time in milliseconds
-</script>
-<!-- end Notifications/Alerts -->
+<?php include '../includes/alerts.php' ?>
 
 
 <div class="bodymain flex-col overflow-auto gap-4">
