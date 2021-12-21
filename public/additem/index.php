@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="buttons flex w-full gap-2">
                     <button type="submit" class="btn-primary" name="additem" value="additem">Add</button>
-                    <a href="<?php echo $site . 'manageitem' ?>" class="btn-primary">Mamage Items</a>
+                    <a href="<?php echo $site . 'manageitem' ?>" class="btn-primary">Manage Items</a>
                 </div>
             </div>
         </form>
