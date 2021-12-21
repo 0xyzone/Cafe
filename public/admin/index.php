@@ -1,8 +1,6 @@
 <?php
 $title = "Admin Panel";
-include '../includes/globalvar.php';
-include '../includes/dbconnection.php';
-include '../includes/header.php';
+include '../includes/main.php';
 
 $usersql = mysqli_query($db, "SELECT * FROM userbase ORDER BY ID ASC");
 //routing

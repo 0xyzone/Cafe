@@ -30,7 +30,7 @@ $customcss = $site . 'css/custom.css';
     </title>
 </head>
 
-<body class="w-screen h-screen bg-gray-300 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden scrolls">
+<body class="w-screen h-screen bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden scrolls">
     
     <div class="">
         <button class="absolute top-4 right-5 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>

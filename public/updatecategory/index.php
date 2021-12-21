@@ -77,7 +77,7 @@ if (!isset($_SESSION['user'])) { //user validation
         <div class="bodymain flex-col overflow-auto gap-4">
             <div class="tables fadeInBottom">
                 <div class="title">
-                    <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> Update Category
+                    <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> Manage Category
                 </div>
 
                 <table class="table-auto border-collapse text-lg lg:text-2xl">

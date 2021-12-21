@@ -634,13 +634,13 @@ select {
   gap: 1rem;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(212 212 216 / var(--tw-bg-opacity));
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 2.5rem;
   padding-top: 2rem;
   --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
   transition-duration: 300ms;
 }
 
@@ -665,19 +665,19 @@ select {
   --tw-shadow-colored: 10px 10px 8px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   display: flex;
-  width: 66.666667%;
+  width: 91.666667%;
   transform: var(--tw-transform);
   flex-direction: column;
   gap: 2rem;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(212 212 216 / var(--tw-bg-opacity));
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 2rem;
   padding-bottom: 2.5rem;
   --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
   transition-duration: 300ms;
 }
 
@@ -826,14 +826,14 @@ select {
   align-items: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
   padding-left: 1.25rem;
   text-align: left;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(132 204 22 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
   transition-duration: 150ms;
 }
 
@@ -849,8 +849,6 @@ select {
 .dark .bigbtn {
   --tw-bg-opacity: 1;
   background-color: rgb(101 163 13 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1024px) {
@@ -969,6 +967,17 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.required::after {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+  --tw-content: '*';
+  content: var(--tw-content);
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .fixed {
   position: fixed;
 }
@@ -981,12 +990,21 @@ input[type="number"] {
   position: relative;
 }
 
+.inset-y-0 {
+  top: 0px;
+  bottom: 0px;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .right-0 {
   right: 0px;
+}
+
+.left-0 {
+  left: 0px;
 }
 
 .top-10 {
@@ -1202,6 +1220,10 @@ input[type="number"] {
   border-radius: 9999px;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-l-lg {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -1240,9 +1262,9 @@ input[type="number"] {
   background-color: rgb(255 228 230 / var(--tw-bg-opacity));
 }
 
-.bg-gray-300 {
+.bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-gray-800 {
@@ -1275,8 +1297,26 @@ input[type="number"] {
   padding-right: 0.5rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .text-left {
@@ -1308,6 +1348,11 @@ input[type="number"] {
 
 .text-lg {
   font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -1444,9 +1489,84 @@ input[type="number"] {
   color: rgb(22 101 52 / var(--tw-text-opacity));
 }
 
+.odd\:bg-gray-700:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.even\:bg-gray-700:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.even\:bg-gray-600:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.even\:bg-zinc-400:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 161 170 / var(--tw-bg-opacity));
+}
+
+.even\:bg-zinc-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 212 216 / var(--tw-bg-opacity));
+}
+
+.even\:bg-slate-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.even\:bg-neutral-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 212 212 / var(--tw-bg-opacity));
+}
+
+.even\:bg-stone-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
+}
+
+.even\:bg-stone-400:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 162 158 / var(--tw-bg-opacity));
+}
+
+.even\:bg-gray-400:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.even\:bg-gray-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.even\:bg-zinc-200:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+}
+
+.even\:text-gray-700:nth-child(even) {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.even\:text-gray-800:nth-child(even) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.disabled\:text-lime-600:disabled {
+  --tw-text-opacity: 1;
+  color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
 .dark .dark\:bg-lime-200 {
@@ -1517,6 +1637,31 @@ input[type="number"] {
 .dark .dark\:text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.dark .dark\:odd\:bg-gray-500:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:odd\:bg-gray-700:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:even\:bg-gray-600:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:even\:text-gray-300:nth-child(even) {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.dark .dark\:even\:text-gray-400:nth-child(even) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .dark .dark\:hover\:text-gray-300:hover {

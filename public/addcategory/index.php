@@ -1,8 +1,6 @@
 <?php
 $title = 'Add Category';
-include '../includes/dbconnection.php';
-include '../includes/globalvar.php';
-include '../includes/header.php';
+include '../includes/main.php';
 if (!isset($_SESSION['user'])){
     header('location:'.$site);
 } else {
@@ -49,7 +47,7 @@ if (!isset($_SESSION['user'])){
         </div>
         <div class="buttons flex w-full gap-2">
             <button type="submit" class="btn-primary" name="add" value="add">Add</button>
-            <a href="<?php echo $site.'updatecategory'?>" class="btn-primary" >Update Category</a>
+            <a href="<?php echo $site.'updatecategory'?>" class="btn-primary" >Manage Category</a>
         </div>
     </form>
     <div class="tables fadeInBottom">
