@@ -33,11 +33,11 @@ $customcss = $site . 'css/custom.css';
 <body class="w-screen h-screen bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden scrolls">
     
     <div class="">
-        <button class="absolute top-4 right-5 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
+        <button class="absolute top-4 right-5 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
     </div>
     <?php if (isset($_SESSION['user'])) : ?>
-        <a href="<?php echo $site . 'security/logout.php' ?>" class="absolute top-16 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center " id="toggle" title="Logout"><i class="fad fa-sign-out-alt text-2xl"></i></a>
+        <a href="<?php echo $site . 'security/logout.php' ?>" class="absolute top-16 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center z-50 secondaryshadow" id="toggle" title="Logout"><i class="fad fa-sign-out-alt text-2xl"></i></a>
     <?php else : ?>
-        <a href="<?php echo $site . 'login' ?>" class="absolute top-16 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center <?php $currenturl = $_SERVER["PHP_SELF"]; if ($currenturl == "/cafe/public/login/index.php") { echo "hidden"; } ?>" id="toggle"><i class="fad fa-sign-in-alt text-2xl"></i></a>
+        <a href="<?php echo $site . 'login' ?>" class="absolute top-16 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center z-50 secondaryshadow <?php $currenturl = $_SERVER["PHP_SELF"]; if ($currenturl == "/cafe/public/login/index.php") { echo "hidden"; } ?>" id="toggle"><i class="fad fa-sign-in-alt text-2xl"></i></a>
     <?php endif; ?>
     <script src="<?php echo $site . 'js/darkmode.js'; ?>"></script>

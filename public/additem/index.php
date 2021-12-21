@@ -77,13 +77,14 @@ if (!isset($_SESSION['user'])) {
             <div class="secondtitle">
                 Recent addition
             </div>
-            <table class="table-auto border-collapse text-lg lg:text-2xl">
+            <table class="tablemain">
                 <thead>
                     <tr class="thead">
                         <th class="px-4 py-2 rounded-l-lg">ID</th>
                         <th class=" px-2 text-left w-48 md:w-52 lg:w-64">Item</th>
                         <th class=" px-6 text-left">Category</th>
-                        <th class=" px-8 text-left rounded-r-lg">Price</th>
+                        <th class=" px-8 text-left rounded-r-lg 2xl:rounded-none">Price</th>
+                        <th class=" px-8 text-center rounded-r-lg smhidden">Added on</th>
                     </tr>
                 </thead>
                 <tbody id="categories">
@@ -93,6 +94,7 @@ if (!isset($_SESSION['user'])) {
                             <td class="px-2 text-left"><?php echo $row['item_name']; ?></td>
                             <td class="px-6 text-left"><?php echo $row['category']; ?></td>
                             <td class="px-2 text-center"><span>₹ </span><?php echo $row['price']; ?></td>
+                            <td class="px-2 text-center smhidden"><?php echo $row['created_on']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

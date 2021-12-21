@@ -91,7 +91,7 @@ if (!isset($_SESSION['user'])) { //user validation
                     </thead>
                     <tbody id="categories">
                         <?php foreach ($usersql as $row) : ?>
-                            <tr class='border-y-8 border-y-transparent'>
+                            <tr class='tbodyrow'>
                                 <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
                                 <td class="px-2 text-left select-all"><?php echo $row['category']; ?></td>
                                 <td class="px-2 text-left select-all"><?php echo $row['html_id']; ?></td>
