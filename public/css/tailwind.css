@@ -823,6 +823,26 @@ select {
   }
 }
 
+.btn-secondary {
+  border-radius: 0.75rem;
+  border-width: 2px;
+  border-color: currentColor;
+  background-color: transparent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.dark .btn-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity));
+}
+
 .mainshadow {
   --tw-shadow: 10px 10px 8px 0px rgba(0,0,0,0.2);
   --tw-shadow-colored: 10px 10px 8px 0px var(--tw-shadow-color);

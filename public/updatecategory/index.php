@@ -13,10 +13,11 @@ if (isset($_POST['update'])) {
     $query = mysqli_query($db, "SELECT category FROM category WHERE category='$category'");
     $numrow = mysqli_num_rows($query);
     if ($numrow > 0) {
-        $err = "Item already exisits!";
+        $err = "Category already exisits!";
     } else {
         $db->query("UPDATE category SET category='$category',html_id='$html_id' WHERE ID=$id");
         $_SESSION['message'] = "Category updated successfully!";
+        $_SESSION['msg_time'] = time();
     }
 }
 include '../includes/alerts.php';
