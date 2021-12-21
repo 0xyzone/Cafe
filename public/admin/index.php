@@ -23,6 +23,14 @@ if (isset($_GET['option'])) {
         $option = $site . 'adduser';
         header('location:' . $option);
     }
+    if ($_GET['option'] == "additem") {
+        $option = $site . 'additem';
+        header('location:' . $option);
+    }
+    if ($_GET['option'] == "manageitem") {
+        $option = $site . 'manageitem';
+        header('location:' . $option);
+    }
 }
 
 //deleting a user
@@ -113,7 +121,7 @@ if (isset($_POST['update'])) {
             <div class="text-4xl font-bold">
                 <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> User update
             </div>
-            <div class="flex flex-col gap-4">
+            <div class="formcontents">
                 <div class="forminputs">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" class="fields" placeholder="Enter your username..." autocomplete="off" autofocus value="<?php echo $res['username']; ?>">
