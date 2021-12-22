@@ -19,6 +19,12 @@ if (isset($_GET['delete'])){
     $db->query("DELETE FROM orderitems WHERE ID='$id'");
     header("Location:" . $header);
 }
+if (isset($_GET['cancel'])){
+    $id = $_GET['cancel'];
+    $header = $site."orders";
+    $db->query("DELETE FROM orders WHERE order_no='$id'");
+    header("Location:" . $header);
+}
 ?>
 <div class="bodymain flex-col gap-2">
     <div class="tables gap-10">
@@ -78,7 +84,7 @@ if (isset($_GET['delete'])){
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="flex justify-end gap-4">
                     <input type="text" name='orderno' id="orderno" value="<?php echo $orderno; ?>" hidden>
                     <button class="btn-primary" name='confirm'>Confirm order</button>
-                    <a href="<?php echo $site . 'orderitem?delete=' . $orderno; ?>" class="btn-negetive">Cancel</a>
+                    <a href="<?php echo $site . 'orderitem?cancel=' . $orderno; ?>" class="btn-negetive">Cancel</a>
                 </form>
             </div>
         <?php endif; ?>
