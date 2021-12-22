@@ -32,7 +32,6 @@ if (isset($_POST['addorderitem'])) {
     $stmt->close();
     $db->close();
     header('location:' . $site . 'orderitem?orderno='.$rowLastId);
-    echo $iprice['price'];
 }
 ?>
 <?php if (isset($_GET['option'])) : ?>

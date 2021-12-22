@@ -11,7 +11,13 @@ if (isset($_GET['orderno'])) {
 if (isset($_POST['confirm'])) {
     $ono = $_POST['orderno'];
     $db->query("UPDATE orders SET status='Paid' WHERE order_no='$ono'");
-    header('location:' . $site);
+    header('location:' . $site.'orders');
+}
+if (isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    $header = $site."orderitem?orderno=".$_GET['orderno'];
+    $db->query("DELETE FROM orderitems WHERE ID='$id'");
+    header("Location:" . $header);
 }
 ?>
 <div class="bodymain flex-col gap-2">
@@ -49,18 +55,21 @@ if (isset($_POST['confirm'])) {
                         <td class="px-4 text-left"><?php echo $res['item']; ?></td>
                         <td class="px-2 text-left"><?php echo $res['qty']; ?></td>
                         <td class="px-2 text-left"><?php echo $resquerry['price']; ?></td>
-                        <td class="px-4 text-left"><span>Rs. </span><?php echo $res['total_price']; ?></td>
+                        <td class="px-4 text-left"><span>Rs. </span><?php echo $res['total_price']; ?><a href="<?php echo $site.'orderitem?orderno='.$orderno.'&delete='.$res['ID'];?>"><i class="fad fa-times pl-2"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
-                    <tr class="bg-slate-600 font-bold">
-                        <td colspan="3" class="text-right px-4 py-2">Total</td>
+                <tfoot>
+                    <tr class="font-bold text-gray-800 dark:text-stone-200">
+                        <td colspan="3" class="text-right px-4 rounded-l-lg">Total</td>
                         <?php
                         $tpquery = mysqli_query($db, "SELECT total_price FROM orderitems WHERE order_no='$orderno'");
-                        $tpres = mysqli_fetch_array($tpquery);
-                        $tptotal = array_sum($tpres);
+                        $tpres = mysqli_fetch_all($tpquery, MYSQLI_ASSOC);
+                        $column = array_column($tpres, 'total_price');
+                        $tptotal = array_sum($column);
                         ?>
-                        <td class="text-left px-4"><span>Rs. </span><?php echo $tptotal; ?></td>
+                        <td class="text-left px-4 rounded-r-lg"><span>Rs. </span><?php echo $tptotal; ?></td>
                     </tr>
+                </tfoot>
             </tbody>
         </table>
         <?php if ($status == "Pending") : ?>

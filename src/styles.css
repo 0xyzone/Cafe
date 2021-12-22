@@ -52,7 +52,7 @@
     @apply bg-lime-600 text-gray-200 dark:bg-lime-600 rounded-lg font-bold;
   }
   .tbrow {
-    @apply border-y-8 border-y-transparent dark:even:bg-gray-600 even:bg-zinc-400 even:text-gray-800 dark:even:text-gray-400;
+    @apply border-y-8 border-y-transparent dark:even:bg-gray-600 dark:even:text-gray-400 even:bg-neutral-400/50 even:text-gray-800;
   }
   .ls-2 {
     letter-spacing: 1px;
@@ -89,5 +89,8 @@
     .smhidden { 
       display: none; 
     } 
+  }
+  tfoot tr:first-child td {
+    border-top: 1em solid transparent;
   }
 } ;
