@@ -9,7 +9,9 @@ include 'includes/globalvar.php';
             <h1 class="text-4xl lg:text-6xl">
                 <?php
                 date_default_timezone_set('Asia/Kathmandu');
-                if (date("H") < 12) {
+                if (date("H") < 5) {
+                    echo "Hey! Night Owl!";
+                } else if ((date("H") >= 5) && (date("H") < 12)) {
                     echo "Good Morning!";
                 } else if ((date("H") >= 12) && (date("H") < 17)) {
                     echo "Good Afternoon!";
@@ -29,7 +31,7 @@ include 'includes/globalvar.php';
         </div>
         <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10 lg:my-20">
             <?php foreach ($superadmin as $btn) : ?>
-                <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn" id="<?php echo $btn['3'] ?>">
+                <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-800 first:col-span-2 first:justify-center" id="<?php echo $btn['3'] ?>">
                     <?php echo $btn['1'] ?>
                     <?php echo $btn['0'] ?>
                 </a>
