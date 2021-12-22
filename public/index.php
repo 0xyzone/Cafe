@@ -29,7 +29,7 @@ include 'includes/globalvar.php';
         </div>
         <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10 lg:my-20">
             <?php foreach ($superadmin as $btn) : ?>
-                <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn flex gap-2 items-center" id="<?php echo $btn['3'] ?>">
+                <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn" id="<?php echo $btn['3'] ?>">
                     <?php echo $btn['1'] ?>
                     <?php echo $btn['0'] ?>
                 </a>

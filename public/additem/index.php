@@ -41,7 +41,7 @@ if (!isset($_SESSION['user'])) {
                     <label for="item">
                         Item Name
                     </label>
-                    <input type="text" class="fields" name="item" id="item" placeholder="Type item name..." autocomplete="off" autofocus required value="">
+                    <input type="text" class="fields peer " name="item" id="item" placeholder="Type item name..." autocomplete="off" autofocus value="">
                 </div>
                 <div class="forminputs">
                     <label for="category">Category</label>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['user'])) {
                 </thead>
                 <tbody id="categories">
                     <?php foreach ($usersql as $row) : ?>
-                        <tr class='tbrow  dark:even:bg-gray-600 even:bg-zinc-400 even:text-gray-800 dark:even:text-gray-400'>
+                        <tr class='tbrow'>
                             <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
                             <td class="px-2 text-left"><?php echo $row['item_name']; ?></td>
                             <td class="px-6 text-left"><?php echo $row['category']; ?></td>

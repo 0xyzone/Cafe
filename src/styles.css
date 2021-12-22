@@ -21,8 +21,17 @@
   .btn-primary {
     @apply bg-lime-600 text-gray-50 dark:bg-lime-600 dark:text-gray-200 px-4 py-2 lg:text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
   }
+  .btn-negetive {
+    @apply bg-rose-800 text-gray-50 dark:bg-red-800 dark:text-gray-200 px-4 py-2 lg:text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
+  }
   .btn-secondary {
-    @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-gray-200 dark:text-emerald-600 border-2 border-current;
+    @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-gray-200 dark:text-lime-600 border-2 border-current;
+  }
+  .btn-pending {
+    @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-yellow-500 dark:text-amber-500 border-2 border-current flex items-center font-bold;
+  }
+  .btn-paid {
+    @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-lime-600 border-2 border-current flex items-center font-bold;
   }
   .mainshadow {
     @apply shadow-[10px_10px_8px_0px_rgba(0,0,0,0.2)];
@@ -31,7 +40,7 @@
     @apply shadow-[3px_2px_5px_0px_rgba(0,0,0,0.2)];
   }
   .bigbtn {
-    @apply w-full lg:w-full h-24 text-gray-100 bg-lime-600 dark:bg-lime-600 rounded-lg text-2xl lg:text-4xl font-semibold flex items-center pl-5 text-left cursor-pointer hover:mainshadow hover:lg:-translate-y-1 hover:scale-105 hover:lg:scale-100 transform duration-150;
+    @apply w-full lg:w-full h-24 text-gray-100 bg-lime-600 dark:bg-lime-600 rounded-lg text-2xl lg:text-4xl font-semibold flex items-center pl-5 text-left cursor-pointer hover:mainshadow hover:lg:-translate-y-1 hover:scale-105 hover:lg:scale-100 transform duration-150 gap-2;
   }
   .title {
     @apply text-4xl font-bold;
@@ -43,7 +52,7 @@
     @apply bg-lime-600 text-gray-200 dark:bg-lime-600 rounded-lg font-bold;
   }
   .tbrow {
-    @apply border-y-8 border-y-transparent;
+    @apply border-y-8 border-y-transparent dark:even:bg-gray-600 even:bg-zinc-400 even:text-gray-800 dark:even:text-gray-400;
   }
   .ls-2 {
     letter-spacing: 1px;

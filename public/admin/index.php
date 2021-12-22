@@ -54,6 +54,7 @@ if (isset($_POST['update'])) {
     $pw = $_POST['password'];
     $db->query("UPDATE userbase SET username='$uname', password='$pw'");
     $_SESSION['message'] = "User updated successfully!";
+    $_SESSION['msg_time'] = time();
 }
 ?>
 
