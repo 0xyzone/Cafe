@@ -4,22 +4,33 @@ if (isset($_GET['orderno'])) {
 }
 $title = "Add Item for Order# " . $orderno;
 include '../includes/main.php';
-include '../includes/notadmin.php';
+
 
 $sql = mysqli_query($db, "SELECT * FROM menu");
-if (isset($_POST['additem'])){
-    $stmt = $db->prepare('INSERT INTO orderitems(order_no, item, qty, total_price) VALUES (?, ?, ?, ?)');
+if (isset($_POST['additem'])) {
     $orderno = $_POST['id'];
     $item = $_POST['item'];
     $qty = $_POST['qty'];
     $ipricesql = mysqli_query($db, "SELECT * FROM menu WHERE item_name='$item'");
     $iprice = mysqli_fetch_array($ipricesql);
     $tprice = $qty * $iprice['price'];
-    $stmt->bind_param('isii', $orderno, $item, $qty, $tprice);
-    $stmt->execute();
-    $stmt->close();
-    $db->close();
-    header('location:' . $site . 'orderitem?orderno='.$orderno);
+    $itemquery = mysqli_query($db, "SELECT item FROM orderitems WHERE order_no='$orderno' && item='$item'");
+    if (mysqli_num_rows($itemquery) > 0) {
+        $itemquery = mysqli_query($db, "SELECT * FROM orderitems WHERE order_no='$orderno' && item='$item'");
+        $iqres = mysqli_fetch_array($itemquery);
+        $oldqty = $iqres['qty'];
+        $newqty = $oldqty + $qty;
+        $newtp = $newqty * $iprice['price'];
+        $db->query("UPDATE orderitems SET qty='$newqty',total_price='$newtp' WHERE order_no='$orderno' && item='$item'");
+        header('location:' . $site . 'orderitem?orderno=' . $orderno);
+    } else {
+        $stmt = $db->prepare('INSERT INTO orderitems(order_no, item, qty, total_price) VALUES (?, ?, ?, ?)');
+        $stmt->bind_param('isii', $orderno, $item, $qty, $tprice);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
+        header('location:' . $site . 'orderitem?orderno=' . $orderno);
+    }
 }
 
 ?>

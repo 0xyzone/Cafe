@@ -811,7 +811,7 @@ select {
 
 .dark .btn-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
@@ -945,7 +945,7 @@ select {
   gap: 0.5rem;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
   padding-left: 1.25rem;
   text-align: left;
   font-size: 1.5rem;
@@ -967,7 +967,7 @@ select {
 
 .dark .bigbtn {
   --tw-bg-opacity: 1;
-  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 1024px) {
@@ -1476,11 +1476,6 @@ tfoot tr:first-child td {
   padding-right: 2rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1675,6 +1670,11 @@ tfoot tr:first-child td {
   justify-content: center;
 }
 
+.first\:bg-lime-600:first-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+}
+
 .first\:bg-lime-800:first-child {
   --tw-bg-opacity: 1;
   background-color: rgb(63 98 18 / var(--tw-bg-opacity));
@@ -1828,12 +1828,6 @@ tfoot tr:first-child td {
   }
 }
 
-@media (min-width: 1280px) {
-  .first\:xl\:col-span-2:first-child {
-    grid-column: span 2 / span 2;
-  }
-}
-
 @media (min-width: 1536px) {
   .\32xl\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1858,18 +1852,13 @@ tfoot tr:first-child td {
     padding-right: 2rem;
   }
 
-  .\32xl\:text-6xl {
-    font-size: 3.75rem;
+  .\32xl\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 
   .\32xl\:text-9xl {
     font-size: 8rem;
-    line-height: 1;
-  }
-
-  .\32xl\:text-8xl {
-    font-size: 6rem;
     line-height: 1;
   }
 

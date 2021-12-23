@@ -1,7 +1,6 @@
 <?php
 $title = "Take Order";
 include '../includes/main.php';
-include '../includes/notadmin.php';
 $sql = mysqli_query($db, "SELECT * FROM menu");
 $last = mysqli_query($db, "SELECT * FROM orders ORDER BY order_no DESC LIMIT 1");
 $reslast = mysqli_fetch_array($last);
@@ -32,7 +31,13 @@ if (isset($_POST['addorderitem'])) {
     $stmt->execute();
     $stmt->close();
     $db->close();
-    header('location:' . $site . 'orderitem?orderno='.$rowLastId);
+    header('location:' . $site . 'orderitem?orderno=' . $rowLastId);
+}
+if (isset($_GET['cancel'])) {
+    $id = $_GET['cancel'];
+    $header = $site . "orders";
+    $db->query("DELETE FROM orders WHERE order_no='$id'");
+    header("Location:" . $header);
 }
 ?>
 <?php if (isset($_GET['option'])) : ?>
@@ -59,7 +64,11 @@ if (isset($_POST['addorderitem'])) {
                     <label for="qty">Qty.</label>
                     <input type="number" name="qty" id="qty" class="fields" required>
                 </div>
-                <button class="btn-primary" name="addorderitem" id="addorderitem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
+                <div class="flex gap-2">
+                    <button class="btn-primary" name="addorderitem" id="addorderitem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
+                    <a href="<?php echo $site . 'orderitem?cancel=' . $rowLastId; ?>" class="btn-negetive">Cancel</a>
+                </div>
+
             </form>
         </div>
     <?php endif; ?>

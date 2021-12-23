@@ -1,6 +1,7 @@
 <?php
 $title = "Login";
 include '../includes/main.php';
+include '../security/validation.php';
 ?>
 <?php if (isset($_SESSION['user'])){
     header('location:'.$site);
