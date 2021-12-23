@@ -10,10 +10,10 @@
     @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 sm:w-auto px-8 pt-8 py-10 rounded-xl flex flex-col gap-4 transform duration-300 mainshadow w-11/12;
   }
   .forminputs {
-    @apply text-2xl flex flex-col justify-between gap-2;
+    @apply 2xl:text-2xl text-sm flex flex-col justify-between gap-2;
   }
   .forms {
-    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-8 pt-8 pb-10 w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 rounded-xl flex flex-col gap-8 transform duration-300 mainshadow;
+    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-8 pt-8 pb-10 w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 rounded-xl flex flex-col gap-2 transform duration-300 mainshadow;
   }
   .fields {
     @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-green-700 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none outline-none hover:mainshadow;
@@ -43,7 +43,7 @@
     @apply w-full lg:w-full h-24 text-gray-100 bg-lime-700 dark:bg-lime-700 rounded-lg text-2xl lg:text-4xl font-semibold flex items-center pl-5 text-left cursor-pointer hover:mainshadow hover:lg:-translate-y-1 hover:scale-105 hover:lg:scale-100 transform duration-150 gap-2;
   }
   .title {
-    @apply text-4xl font-bold;
+    @apply 2xl:text-4xl text-2xl font-bold;
   }
   .secondtitle {
     @apply text-2xl font-bold;
@@ -58,7 +58,7 @@
     letter-spacing: 1px;
   }
   .formcontents {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-2;
   }
   .scrolls {
     @apply scrollbar scrollbar-track-lime-800 scrollbar-thumb-lime-600;

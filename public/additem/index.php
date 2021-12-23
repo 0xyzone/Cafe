@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
     <?php include '../includes/alerts.php' ?>
     <div class="bodymain flex-col overflow-auto gap-4">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="forms fadeInTop">
-            <div class="text-4xl font-bold">
+            <div class="title">
                 <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> Add Item
             </div>
             <div class="formcontents">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['user'])) {
                     <tr class="thead">
                         <th class="px-4 py-2 rounded-l-lg">ID</th>
                         <th class=" px-2 text-left w-48 md:w-52 lg:w-64">Item</th>
-                        <th class=" px-6 text-left">Category</th>
+                        <th class=" px-6 text-left smhidden">Category</th>
                         <th class=" px-8 text-left rounded-r-lg 2xl:rounded-none">Price</th>
                         <th class=" px-8 text-center rounded-r-lg smhidden">Added on</th>
                     </tr>
@@ -93,7 +93,7 @@ if (!isset($_SESSION['user'])) {
                         <tr class='tbrow'>
                             <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
                             <td class="px-2 text-left"><?php echo $row['item_name']; ?></td>
-                            <td class="px-6 text-left"><?php echo $row['category']; ?></td>
+                            <td class="px-6 text-left smhidden"><?php echo $row['category']; ?></td>
                             <td class="px-2 text-center"><span>₹ </span><?php echo $row['price']; ?></td>
                             <td class="px-2 text-center smhidden"><?php echo $row['created_on']; ?></td>
                         </tr>
