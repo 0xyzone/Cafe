@@ -44,7 +44,7 @@ if (!isset($_SESSION['user'])){
         </div>
         <div class="forminputs">
             <label for="category">Category Name</label>
-            <input type="text" id="category" name="category" class="fields" autocomplete="off" autofocus>
+            <input type="text" id="category" name="category" class="fields" autocomplete="off" autofocus required>
         </div>
         <div class="buttons flex w-full gap-2">
             <button type="submit" class="btn-primary" name="add" value="add">Add</button>

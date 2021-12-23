@@ -54,12 +54,12 @@ if ($_POST) {
         <div class="flex flex-col gap-4">
             <div class="forminputs">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="fields" placeholder="Create a username..." autocomplete="off" autofocus>
+                <input type="text" name="username" id="username" class="fields" placeholder="Create a username..." autocomplete="off" autofocus required>
             </div>
             <div class="forminputs">
                 <label for="password">Password:</label>
                 <div class="relative flex flex-col justify-center items-end">
-                    <input type="text" name="password" id="password" class="fields" placeholder="**********" autocomplete="off" class="">
+                    <input type="text" name="password" id="password" class="fields" placeholder="**********" autocomplete="off" class="fields"  required>
                 </div>
             </div>
         </div>

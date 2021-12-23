@@ -1212,6 +1212,10 @@ tbody:before {
   pointer-events: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1758,6 +1762,10 @@ tbody:before {
 .disabled\:text-lime-600:disabled {
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
+}
+
+.peer:required ~ .peer-required\:visible {
+  visibility: visible;
 }
 
 .dark .dark\:bg-lime-200 {

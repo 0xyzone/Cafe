@@ -42,7 +42,7 @@ if (!isset($_SESSION['user'])) {
                     <label for="item">
                         Item Name
                     </label>
-                    <input type="text" class="fields peer " name="item" id="item" placeholder="Type item name..." autocomplete="off" autofocus value="">
+                    <input type="text" class="fields" name="item" id="item" placeholder="Type item name..." autocomplete="off" autofocus value="" required>
                 </div>
                 <div class="forminputs">
                     <label for="category">Category</label>
