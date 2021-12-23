@@ -101,5 +101,7 @@ if (!isset($_SESSION['user'])) {
                 </tbody>
             </table>
         </div>
+        <div class="emptyfooter">
+        </div>
     </div>
 <?php } ?>
