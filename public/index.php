@@ -3,7 +3,7 @@ $title = "Homepage";
 include 'includes/main.php';
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
-    <div class="lg:w-6/12 w-8/12 h-full mx-auto">
+    <div class="lg:w-6/12 w-8/12 h-full mx-auto pt-16">
         <div class="flex flex-col gap-4 fadeInLeft pt-10 lg:pt-20">
             <h1 class="text-4xl lg:text-6xl">
                 <?php
@@ -28,7 +28,7 @@ include 'includes/main.php';
                 </p>
             </div>
         </div>
-        <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10 lg:my-20">
+        <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10">
             <?php if ($_SESSION['user'] == "admin") : ?>
                 <?php foreach ($superadmin as $btn) : ?>
                     <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-600 first:col-span-0 first:2xl:col-span-2 first:2xl:justify-center" id="<?php echo $btn['3'] ?>">

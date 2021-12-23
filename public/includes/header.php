@@ -33,11 +33,11 @@ $customcss = $site . 'css/custom.css';
 <body class="w-screen h-screen bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls">
     
     <div class="">
-        <button class="darkmodetoggle" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
+        <button class="darkmodetoggle <?php $currenturl = $_SERVER["PHP_SELF"]; if ($currenturl == "/cafe/public/login/index.php") { echo " right-5"; } else { echo " right-20"; } ?>" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
     </div>
     <?php if (isset($_SESSION['user'])) : ?>
         <a href="<?php echo $site . 'security/logout.php' ?>" class="loginout" id="toggle" title="Logout"><i class="fad fa-sign-out-alt text-2xl"></i></a>
     <?php else : ?>
-        <a href="<?php echo $site . 'login' ?>" class="loginout <?php $currenturl = $_SERVER["PHP_SELF"]; if ($currenturl == "/cafe/public/login/index.php") { echo "hidden"; } ?>" id="toggle"><i class="fad fa-sign-in-alt text-2xl"></i></a>
+        <a href="<?php echo $site . 'login' ?>" class="loginout <?php if ($currenturl == "/cafe/public/login/index.php") { echo "hidden"; } ?>" id="toggle"><i class="fad fa-sign-in-alt text-2xl"></i></a>
     <?php endif; ?>
     <script src="<?php echo $site . 'js/darkmode.js'; ?>"></script>

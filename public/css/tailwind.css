@@ -1242,7 +1242,6 @@ tbody:before {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   position: absolute;
   top: 1rem;
-  right: 5rem;
   z-index: 50;
   height: 2.5rem;
   width: 2.5rem;
@@ -1300,6 +1299,14 @@ tbody:before {
 
 .right-2 {
   right: 0.5rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.right-20 {
+  right: 5rem;
 }
 
 .z-50 {
@@ -1539,6 +1546,10 @@ tbody:before {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -1583,6 +1594,18 @@ tbody:before {
 
 .pl-2 {
   padding-left: 0.5rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-left {
@@ -1872,6 +1895,11 @@ tbody:before {
   .lg\:my-20 {
     margin-top: 5rem;
     margin-bottom: 5rem;
+  }
+
+  .lg\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .lg\:w-6\/12 {

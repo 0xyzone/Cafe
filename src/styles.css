@@ -106,6 +106,6 @@
     @apply absolute top-4 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center z-50 secondaryshadow;
   }
   .darkmodetoggle {
-    @apply absolute top-4 right-20 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow;
+    @apply absolute top-4 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow;
   }
 } ;
