@@ -1,7 +1,6 @@
 <?php
 $title = "Homepage";
-include 'includes/header.php';
-include 'includes/globalvar.php';
+include 'includes/main.php';
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
     <div class="lg:w-6/12 w-8/12 h-full mx-auto">
@@ -30,12 +29,21 @@ include 'includes/globalvar.php';
             </div>
         </div>
         <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10 lg:my-20">
-            <?php foreach ($superadmin as $btn) : ?>
-                <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-800 first:col-span-2 first:justify-center" id="<?php echo $btn['3'] ?>">
-                    <?php echo $btn['1'] ?>
-                    <?php echo $btn['0'] ?>
-                </a>
-            <?php endforeach; ?>
+            <?php if ($_SESSION['user'] == "admin") : ?>
+                <?php foreach ($superadmin as $btn) : ?>
+                    <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-800 first:col-span-0 first:2xl:col-span-2 first:justify-center" id="<?php echo $btn['3'] ?>">
+                        <?php echo $btn['1'] ?>
+                        <?php echo $btn['0'] ?>
+                    </a>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <?php foreach ($reception as $btn) : ?>
+                    <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-800 first:col-span-0 first:2xl:col-span-2 first:justify-center" id="<?php echo $btn['3'] ?>">
+                        <?php echo $btn['1'] ?>
+                        <?php echo $btn['0'] ?>
+                    </a>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 <?php else : ?>

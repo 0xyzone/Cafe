@@ -4,6 +4,7 @@ if (isset($_GET['orderno'])) {
 }
 $title = "Add Item for Order# " . $orderno;
 include '../includes/main.php';
+include '../includes/notadmin.php';
 
 $sql = mysqli_query($db, "SELECT * FROM menu");
 if (isset($_POST['additem'])){

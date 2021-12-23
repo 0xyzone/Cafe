@@ -140,7 +140,13 @@ if (isset($_POST['update'])) {
     </div>
 <?php endif; ?>
 <!-- end Editing a user -->
+<div class="bodymain">
+    <p class="text-4xl lg:text-6xl 2xl:text-8xl flex flex-col justify-center items-center gap-10 transform duration-300">
+        <i class="fad fa-hand-sparkles text-6xl 2xl:text-9xl text-lime-700 dark:text-green-300 relative"><span class=" absolute top-0 right-0"><i class="fad fa-hand-sparkles text-6xl 2xl:text-9xl animate-ping text-gray-700 dark:text-gray-500 opacity-30"></i></span></i>
 
+        Wait! Are you lost buddy?
+    </p>
+</div>
 <script>
     setTimeout(function() {
         $('#err').fadeOut('slow');

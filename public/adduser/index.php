@@ -1,8 +1,7 @@
 <?php
 $title = 'Add User';
-include '../includes/header.php';
-include '../includes/dbconnection.php';
-include '../includes/globalvar.php';
+include '../includes/main.php';
+include '../includes/notadmin.php';
 if (!isset($_SESSION['user'])) {
     header('location:' . $site . 'login');
 }

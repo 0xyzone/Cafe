@@ -1,6 +1,7 @@
 <?php
 $title = "Manage Item";
 include '../includes/main.php';
+include '../includes/notadmin.php';
 
 //updating an item
 if (isset($_POST['update'])){

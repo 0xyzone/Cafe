@@ -1,6 +1,7 @@
 <?php
 $title = 'Order list';
 include '../includes/main.php';
+include '../includes/notadmin.php';
 if (isset($_GET['orderno'])) {
     $orderno = $_GET['orderno'];
     $sql = mysqli_query($db, "SELECT * FROM orderitems WHERE order_no='$orderno' ORDER BY order_no ASC");

@@ -1,6 +1,7 @@
 <?php
 $title = "Add Item";
 include '../includes/main.php';
+include '../includes/notadmin.php';
 if (!isset($_SESSION['user'])) {
     header('location:' . $site);
 } else {

@@ -1,6 +1,7 @@
 <?php
 $title = "Take Order";
 include '../includes/main.php';
+include '../includes/notadmin.php';
 $sql = mysqli_query($db, "SELECT * FROM menu");
 $last = mysqli_query($db, "SELECT * FROM orders ORDER BY order_no DESC LIMIT 1");
 $reslast = mysqli_fetch_array($last);
