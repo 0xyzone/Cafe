@@ -27,6 +27,7 @@ if (isset($_GET['cancel'])) {
     $id = $_GET['cancel'];
     $header = $site . "orders";
     $db->query("DELETE FROM orders WHERE order_no='$id'");
+    $db->query("DELETE FROM orderitems WHERE order_no='$id'");
     header("Location:" . $header);
 }
 ?>
@@ -75,26 +76,29 @@ if (isset($_GET['cancel'])) {
                         <td class="px-4 text-left">
                             <span>Rs. </span><?php echo $res['total_price']; ?>
                             <?php if ($status == "Pending") : ?>
-                                <a href="<?php echo $site . 'orderitem?orderno=' . $orderno . '&delete=' . $res['ID']; ?>">
+                                <a href="<?php echo $site . 'orderitem?orderno=' . $orderno . '&delete=' . $res['ID']; ?>" onclick="return confirm('Are you sure you want to delete?')">
                                     <i class="fad fa-times pl-2"></i>
                                 </a>
                             <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
+            </tbody>
             <tfoot>
                 <tr class="font-bold text-gray-800 dark:text-stone-200">
                     <td colspan="3" class="text-right px-4 rounded-l-lg">Total</td>
                     <?php
                     $tpquery = mysqli_query($db, "SELECT total_price FROM orderitems WHERE order_no='$orderno'");
-                    $tpres = mysqli_fetch_all($tpquery, MYSQLI_ASSOC);
+                    $tpres = array();
+                    while($row = mysqli_fetch_assoc($tpquery)){
+                        $tpres[] = $row;
+                    }
                     $column = array_column($tpres, 'total_price');
                     $tptotal = array_sum($column);
                     ?>
                     <td class="text-left px-4 rounded-r-lg"><span>Rs. </span><?php echo $tptotal; ?></td>
                 </tr>
             </tfoot>
-            </tbody>
         </table>
         <?php if ($status == "Pending") : ?>
             <div class="flex justify-between">

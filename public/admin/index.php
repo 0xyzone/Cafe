@@ -65,7 +65,7 @@ if (isset($_POST['update'])) {
     <?php include '../includes/alerts.php'; ?>
     <div class="bodymain fadeInTop">
         <div class="tables">
-            <div class="text-4xl font-bold">
+            <div class="title">
                 <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a> <span class="text-gray-400 dark:text-gray-500">/</span> Users
             </div>
             <table class="table-auto border-collapse text-lg lg:text-2xl">
@@ -73,8 +73,8 @@ if (isset($_POST['update'])) {
                     <tr class="thead">
                         <th class="px-4 rounded-l-lg">ID</th>
                         <th class=" px-2 text-left">Username</th>
-                        <th class=" px-2 text-left">Password</th>
-                        <th class="px-4 rounded-r-lg text-left" colspan="2">Actions</th>
+                        <th class=" px-2 text-left smhidden">Password</th>
+                        <th class="px-4 rounded-r-lg text-center" colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="users">
@@ -82,9 +82,9 @@ if (isset($_POST['update'])) {
                         <tr class="tbrow">
                             <td class="px-4 text-right"><?php echo $row['ID']; ?></td>
                             <td class="px-2 text-left select-all"><?php echo $row['username']; ?></td>
-                            <td class="px-2 text-left select-all"><?php echo $row['password']; ?></td>
-                            <td class="px-4 text-center text-lime-500 dark:text-lime-500"><a href="<?php echo $site . 'admin/?edit=' . $row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
-                            <td class="px-4 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site . 'admin/?delete=' . $row['ID']; ?>"><i class="fad fa-trash"></i></a></td>
+                            <td class="px-2 text-left select-all smhidden"><?php echo $row['password']; ?></td>
+                            <td class="edit"><a href="<?php echo $site . 'admin/?edit=' . $row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
+                            <td class="delete"><a href="<?php echo $site . 'admin/?delete=' . $row['ID']; ?>" onclick="return confirm('Are you sure you want to delete?')"><i class="fad fa-trash"></i></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

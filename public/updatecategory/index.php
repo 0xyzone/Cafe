@@ -86,7 +86,7 @@ if (!isset($_SESSION['user'])) { //user validation
                         <tr class="thead">
                             <th class="px-4 py-2 rounded-l-lg">ID</th>
                             <th class=" px-2 text-left w-48 md:w-52 lg:w-64">Category</th>
-                            <th class=" px-2 text-left">html_id</th>
+                            <th class=" px-2 text-left smhidden">html_id</th>
                             <th class=" px-4 text-left rounded-r-lg" colspan="2">Actions</th>
                         </tr>
                     </thead>
@@ -95,9 +95,9 @@ if (!isset($_SESSION['user'])) { //user validation
                             <tr class='tbodyrow'>
                                 <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
                                 <td class="px-2 text-left select-all"><?php echo $row['category']; ?></td>
-                                <td class="px-2 text-left select-all"><?php echo $row['html_id']; ?></td>
+                                <td class="px-2 text-left select-all smhidden"><?php echo $row['html_id']; ?></td>
                                 <td class="px-4 text-center text-lime-500 dark:text-lime-500"><a href="<?php echo $site . 'updatecategory/?edit=' . $row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
-                                <td class="px-4 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site . 'updatecategory/?delete=' . $row['ID']; ?>"><i class="fad fa-trash"></i></a></td>
+                                <td class="px-4 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site . 'updatecategory/?delete=' . $row['ID']; ?>" onclick="return confirm('Are you sure you want to delete?')"><i class="fad fa-trash"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

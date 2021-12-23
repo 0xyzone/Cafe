@@ -47,7 +47,7 @@ if ($_POST) {
 ?>
 <div class="bodymain fadeInTop">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="forms">
-        <div class="text-4xl font-bold">
+        <div class="title">
             <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a>
             <span class="text-gray-400 dark:text-gray-500">/</span> Add User
         </div>

@@ -4,20 +4,14 @@ include '../includes/main.php';
 include '../includes/notadmin.php';
 
 //updating an item
-if (isset($_POST['update'])){
+if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $item = $_POST['item'];
     $cat = $_POST['category'];
     $prc = $_POST['price'];
-    $sql = mysqli_query($db, "SELECT item_name FROM menu WHERE item_name='$item'");
-    $numrow = mysqli_num_rows($sql);
-    if ($numrow > 0) {
-        $err = "Item already exisits!";
-    } else {
-        $db->query("UPDATE menu SET item_name='$item',category='$cat',price='$prc' WHERE ID=$id");
-        $_SESSION['message'] = "Item updated successfully!";
-        $_SESSION['msg_time'] = time();
-    }
+    $db->query("UPDATE menu SET item_name='$item',category='$cat',price='$prc' WHERE ID=$id");
+    $_SESSION['message'] = "Item updated successfully!";
+    $_SESSION['msg_time'] = time();
 }
 
 if (!isset($_SESSION['user'])) {
@@ -36,9 +30,9 @@ if (!isset($_SESSION['user'])) {
         if ($numrow < 2) {
             $err = "Atleast 1 category is reqired!";
         } else {
-            $header = $site . "updatecategory";
+            $header = $site . "manageitem";
             $db->query("DELETE FROM menu WHERE ID='$id'");
-            $_SESSION['message'] = "Category deleted successfully!";
+            $_SESSION['message'] = "Item deleted successfully!";
             $_SESSION['msg_time'] = time();
             header("Location:" . $header);
         }
@@ -61,7 +55,8 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="forminputs">
                     <label for="category">Item Name</label>
-                    <input type="text" id="item" name="item" class="fields" autocomplete="off" autofocus value="<?php echo $rowres['item_name']; ?>">
+                    <input type="text" id="item" name="item" class="fields" autocomplete="off" autofocus value="<?php echo $rowres['item_name']; ?>" hidden>
+                    <input type="text" id="item" name="item" class="fields" autocomplete="off" autofocus value="<?php echo $rowres['item_name']; ?>" disabled>
                 </div>
                 <div class="forminputs">
                     <label for="category">Category</label>
@@ -87,9 +82,9 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                 </div>
-                <div class="buttons flex w-full gap-2">
+                <div class="buttons">
                     <button type="submit" class="btn-primary" name="update" value="update">Update</button>
-                    <a href="<?php echo $site.'manageitem'; ?>" class="btn-primary"><i class="fad fa-angle-left" style="--fa-primary-opacity: 0.20"></i> Back</a>
+                    <a href="<?php echo $site . 'manageitem'; ?>" class="btn-primary"><i class="fad fa-angle-left" style="--fa-primary-opacity: 0.20"></i> Back</a>
                 </div>
             </form>
         </div>
@@ -106,20 +101,20 @@ if (!isset($_SESSION['user'])) {
                         <tr class="thead">
                             <th class="px-4 py-2 rounded-l-lg smhidden">ID</th>
                             <th class="px-4 2xl:px-2 text-left w-48 md:w-52 lg:w-64 rounded-l-lg 2xl:rounded-none">Item</th>
-                            <th class="px-2 2xl:px-6 text-left">Category</th>
+                            <th class="px-2 2xl:px-6 text-left smhidden">Category</th>
                             <th class="px-2 2xl:px-8 text-left">Price</th>
                             <th class="px-2 2xl:px-8 text-center rounded-r-lg" colspan="2">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="items">
                         <?php foreach ($usersql as $row) : ?>
                             <tr class="tbodyrow">
                                 <td class="px-4 py-2 rounded-l-lg smhidden"><?php echo $row['ID']; ?></th>
                                 <td class="px-4 2xl:px-2 text-left w-48 md:w-52 lg:w-64"><?php echo $row['item_name']; ?></td>
-                                <td class="px-2 2xl:px-6 text-left"><?php echo $row['category']; ?></td>
+                                <td class="px-2 2xl:px-6 text-left smhidden"><?php echo $row['category']; ?></td>
                                 <td class="px-2 2xl:px-8 text-left"><?php echo $row['price']; ?></td>
-                                <td class="px-4 text-center text-lime-500 dark:text-lime-500"><a href="<?php echo $site . 'manageitem?edit=' . $row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
-                                <td class="px-4 text-center text-red-500 dark:text-rose-500"><a href="<?php echo $site . 'manageitem?delete=' . $row['ID']; ?>"><i class="fad fa-trash"></i></a></td>
+                                <td class="edit"><a href="<?php echo $site . 'manageitem?edit=' . $row['ID']; ?>"><i class="fad fa-pencil-alt"></i></a></td>
+                                <td class="delete"><a href="<?php echo $site . 'manageitem?delete=' . $row['ID']; ?>" onclick="return confirm('Are you sure you want to delete?')"><i class="fad fa-trash"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -129,5 +124,15 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </div>
         </div>
+        <script>
+            setInterval(function() {
+                $.ajax({
+                    url: "<?php echo $site ?>includes/ajax/itemsajax.php",
+                    success: function(response) {
+                        $('#items').html(response)
+                    }
+                });
+            }, 500);
+        </script>
     <?php endif; ?>
 <?php } ?>
