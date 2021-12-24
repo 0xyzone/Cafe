@@ -4,7 +4,7 @@
 
 @layer components {
   .bodymain {
-    @apply flex justify-center items-center w-full h-full pt-20;
+    @apply flex items-center justify-center w-full h-full pt-24;
   }
   .tables {
     @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 sm:w-auto px-8 pt-8 py-10 rounded-xl flex flex-col gap-4 transform duration-300 mainshadow w-11/12;
@@ -103,7 +103,7 @@
     @apply h-10 w-full;
   }
   .loginout {
-    @apply absolute top-4 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center z-50 secondaryshadow;
+    @apply fixed top-4 right-5 bg-gray-400 text-gray-800 dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 flex justify-center items-center z-50 secondaryshadow;
   }
   .darkmodetoggle {
     @apply absolute top-4 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow;

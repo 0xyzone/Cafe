@@ -18,7 +18,7 @@ $customcss = $site . 'css/custom.css';
     <link rel="stylesheet" href="<?php echo $site . 'css/css/all.css' ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+    <link rel="shortcut icon" href="<?php echo $site; ?>includes/img/logo.ico" type="image/x-icon">
     <title>
         <?php
         if (isset($title)) {
@@ -30,7 +30,7 @@ $customcss = $site . 'css/custom.css';
     </title>
 </head>
 
-<body class="w-screen h-screen bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls">
+<body class="w-full h-full bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls">
     
     <div class="">
         <button class="darkmodetoggle <?php $currenturl = $_SERVER["PHP_SELF"]; if ($currenturl == "/cafe/public/login/index.php") { echo " right-5"; } else { echo " right-20"; } ?>" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>

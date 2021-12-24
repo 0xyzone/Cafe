@@ -1,0 +1,33 @@
+{
+    "remotePath": "./cafeteria/cafe",
+    "host": "vidantaca.com.np",
+    "username": "vidantac",
+    "password": "malaiktha1290",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store",
+        "\\node_modules",
+        "\\src",
+        "\\default.js",
+        "\\package.json",
+        "\\tailwin-config.js",
+        "\\package=lock.json"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ".php, .js, .css, .html, .gif, .jpg, .jpeg, .png, .ico"
+        ],
+        "path": ""
+    }
+}

@@ -47,7 +47,7 @@ include 'includes/main.php';
         </div>
     </div>
 <?php else : ?>
-    <div class="w-full h-full flex flex-col justify-center items-center gap-10">
+    <div class="bodymain flex-col gap-10 mx-auto my-auto">
         <i class="fad fa-hand-sparkles text-9xl text-lime-700 dark:text-green-300 relative"><span class=" absolute top-0 right-0"><i class="fad fa-hand-sparkles text-9xl animate-ping text-gray-700 dark:text-gray-500 opacity-30"></i></span></i>
 
         <span class="text-6xl lg:text-9xl font-bold text-center">RUKO ZARA!<br>SABAR KARO!</span>

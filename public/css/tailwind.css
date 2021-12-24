@@ -621,7 +621,7 @@ select {
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding-top: 5rem;
+  padding-top: 6rem;
 }
 
 .tables {
@@ -1212,7 +1212,7 @@ tbody:before {
   --tw-shadow: 3px 2px 5px 0px rgba(0,0,0,0.2);
   --tw-shadow-colored: 3px 2px 5px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1.25rem;
   z-index: 50;
@@ -1297,16 +1297,16 @@ tbody:before {
   top: 2.5rem;
 }
 
-.right-2 {
-  right: 0.5rem;
-}
-
 .right-5 {
   right: 1.25rem;
 }
 
 .right-20 {
   right: 5rem;
+}
+
+.right-2 {
+  right: 0.5rem;
 }
 
 .z-50 {
@@ -1316,6 +1316,11 @@ tbody:before {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .flex {
@@ -1338,10 +1343,6 @@ tbody:before {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-8\/12 {
   width: 66.666667%;
 }
@@ -1358,10 +1359,6 @@ tbody:before {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .table-auto {
@@ -1546,10 +1543,6 @@ tbody:before {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -1580,6 +1573,10 @@ tbody:before {
   padding-right: 2rem;
 }
 
+.pt-16 {
+  padding-top: 4rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1594,18 +1591,6 @@ tbody:before {
 
 .pl-2 {
   padding-left: 0.5rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
-}
-
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pb-10 {
-  padding-bottom: 2.5rem;
 }
 
 .text-left {
@@ -1890,16 +1875,6 @@ tbody:before {
 @media (min-width: 1024px) {
   .lg\:top-24 {
     top: 6rem;
-  }
-
-  .lg\:my-20 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
-  .lg\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
   }
 
   .lg\:w-6\/12 {
