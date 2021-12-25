@@ -64,7 +64,7 @@ if (isset($_GET['cancel'])) {
                     <label for="qty">Qty.</label>
                     <input type="number" name="qty" id="qty" class="fields" required>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 mt-4">
                     <button class="btn-primary" name="addorderitem" id="addorderitem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
                     <a href="<?php echo $site . 'orderitem?cancel=' . $rowLastId; ?>" class="btn-negetive">Cancel</a>
                 </div>
@@ -87,12 +87,6 @@ if (isset($_GET['cancel'])) {
                 <button name="neworder" class="bigbtn">
                     <i class="fad fa-notes-medical"></i> New Order
                 </button>
-                <!-- <a href="<?php echo $site . 'orders?option=neworder'; ?>" class="bigbtn">
-                    <i class="fad fa-notes-medical"></i> New Order
-                </a>
-                <a href="<?php echo $site . 'orders?option=orderlist'; ?>" class="bigbtn">
-                    <i class="fad fa-clipboard-list-check fa-swap-opacity"></i> Manage Orders
-                </a> -->
             </div>
         </form>
     </div>

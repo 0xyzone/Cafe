@@ -8,18 +8,23 @@ if (isset($_GET['orderno'])) {
     $ressqlorder = mysqli_fetch_array($sqlorder);
     $status = $ressqlorder['status'];
     $numrow = mysqli_num_rows($sql);
-    if ($numrow < 1){
-        header('location:'.$site);
+    if ($numrow < 1) {
+        header('location:' . $site);
     }
 }
 if (isset($_POST['confirm'])) {
     $ono = $_POST['orderno'];
-    $db->query("UPDATE orders SET status='Paid' WHERE order_no='$ono'");
-    header('location:' . $site . 'orders');
+    $tpt = $_POST['totalprice'];
+    $db->query("UPDATE orders SET status='Paid',total_price='$tpt' WHERE order_no='$ono'");
+    header('location:' . $site);
 }
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $header = $site . "orderitem?orderno=" . $_GET['orderno'];
+    $odno = $_GET['orderno'];
+    $header = $site . "orderitem?orderno=" . $odno;
+    if ($numrow = 1){
+        $db->query("DELETE FROM orders WHERE order_no='$odno'");
+    }
     $db->query("DELETE FROM orderitems WHERE ID='$id'");
     header("Location:" . $header);
 }
@@ -36,9 +41,9 @@ if (isset($_GET['cancel'])) {
         <div class="flex justify-between gap-10">
             <div class="title flex flex-col gap-2">
                 <div>
-                    <?php if ($status == "Paid"): ?>
-                    <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a>
-                    <span class="text-gray-400 dark:text-gray-500">/</span>
+                    <?php if ($status == "Paid") : ?>
+                        <a href="<?php echo $site; ?>"><i class="fad fa-home-lg"></i></a>
+                        <span class="text-gray-400 dark:text-gray-500">/</span>
                     <?php endif; ?>
                     Order #<?php echo $orderno; ?>
                 </div>
@@ -90,7 +95,7 @@ if (isset($_GET['cancel'])) {
                     <?php
                     $tpquery = mysqli_query($db, "SELECT total_price FROM orderitems WHERE order_no='$orderno'");
                     $tpres = array();
-                    while($row = mysqli_fetch_assoc($tpquery)){
+                    while ($row = mysqli_fetch_assoc($tpquery)) {
                         $tpres[] = $row;
                     }
                     $column = array_column($tpres, 'total_price');
@@ -105,6 +110,7 @@ if (isset($_GET['cancel'])) {
                 <a href="<?php echo $site . 'orderitem/additem.php?orderno=' . $orderno; ?>" class="btn-secondary">Add item</a>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="flex justify-end gap-4">
                     <input type="text" name='orderno' id="orderno" value="<?php echo $orderno; ?>" hidden>
+                    <input type="hidden" name="totalprice" value="<?php echo $tptotal; ?>">
                     <button class="btn-primary" name='confirm'>Confirm order</button>
                     <a href="<?php echo $site . 'orderitem?cancel=' . $orderno; ?>" class="btn-negetive">Cancel</a>
                 </form>
@@ -112,3 +118,5 @@ if (isset($_GET['cancel'])) {
         <?php endif; ?>
     </div>
 </div>
+<?php
+?>

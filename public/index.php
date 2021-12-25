@@ -1,6 +1,14 @@
 <?php
 $title = "Homepage";
 include 'includes/main.php';
+$date = date('Y-m-d');
+$tpquery = mysqli_query($db, "SELECT total_price FROM orders WHERE created_on LIKE '$date%'");
+$tpres = array();
+while ($row = mysqli_fetch_assoc($tpquery)) {
+    $tpres[] = $row;
+}
+$column = array_column($tpres, 'total_price');
+$today_total_income = array_sum($column);
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
     <div class="lg:w-6/12 w-8/12 h-full mx-auto pt-16">
@@ -19,12 +27,21 @@ include 'includes/main.php';
                 }
                 ?>
             </h1>
-            <div class="flex flex-wrap gap-4 items-center text-gray-500 dark:text-gray-400 transform delay-200">
+            <div class="flex flex-wrap gap-4 items-center text-gray-500 dark:text-gray-400 transform delay-300">
                 <p class="flex gap-2">
                     <i class="fad fa-calendar-week fa-swap-opacity text-lime-600"></i> <?php echo date('d') . 'th ' . date('F') . ' ' . date('Y') . ' | ' . date('l') ?>
                 </p>
                 <p class="flex gap-2 ls-2">
                     <i class="fad fa-clock fa-swap-opacity text-lime-600"></i> <span id="time"></span>
+                </p>
+            </div>
+            <div class="w-max flex gap-4 items-center text-gray-800 transform delay-300 dark:bg-stone-300 p-4 bg-stone-400">
+                <p class="flex gap-2 text-2xl">
+                    <i class="fas fa-cash-register text-lime-600"></i>
+                    <span>Today's Total Earning: Rs. </span>
+                    <span class="font-bold" id="todaytotal">
+                        <?php echo $today_total_income; ?>
+                    </span>
                 </p>
             </div>
         </div>
@@ -79,8 +96,14 @@ include 'includes/main.php';
         $.ajax({
             url: "<?php echo $site ?>includes/ajax/time.php",
             success: function(response) {
-                $('#time').html(response)
+                $('#time').html(response);
             }
         });
-    }, 60000);
+        $.ajax({
+            url: "<?php echo $site ?>includes/ajax/todaytotal.php",
+            success: function(response) {
+                $('#todaytotal').html(response);
+            }
+        });
+    }, 500);
 </script>
