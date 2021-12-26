@@ -9,6 +9,14 @@ while ($row = mysqli_fetch_assoc($tpquery)) {
 }
 $column = array_column($tpres, 'total_price');
 $today_total_income = array_sum($column);
+$month = date('Y-m');
+$monthquery = mysqli_query($db, "SELECT total_price FROM orders WHERE created_on LIKE '$month%'");
+$mqres = array();
+while ($row2 = mysqli_fetch_assoc($monthquery)) {
+    $mqres[] = $row2;
+}
+$column2 = array_column($mqres, 'total_price');
+$monthly_total_income = array_sum($column2);
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
     <div class="lg:w-6/12 w-8/12 h-full mx-auto pt-16">
@@ -35,15 +43,27 @@ $today_total_income = array_sum($column);
                     <i class="fad fa-clock fa-swap-opacity text-lime-600"></i> <span id="time"></span>
                 </p>
             </div>
-            <div class="w-max flex gap-4 items-center text-gray-800 transform delay-300 dark:bg-stone-300 p-4 bg-stone-400">
-                <p class="flex gap-2 text-2xl">
-                    <i class="fas fa-cash-register text-lime-600"></i>
-                    <span>Today's Total Earning: Rs. </span>
-                    <span class="font-bold" id="todaytotal">
-                        <?php echo $today_total_income; ?>
-                    </span>
-                </p>
+            <div class="w-full flex flex-wrap gap-2">
+                <div class="totals">
+                    <p class="flex gap-2 text-2xl">
+                        <i class="fas fa-cash-register dark:text-lime-600 text-lime-600"></i>
+                        <span>Today's Total Earning: </span>
+                        <span class="font-bold text-lime-600" id="todaytotal">
+                            <?php echo $today_total_income; ?>
+                        </span>
+                    </p>
+                </div>
+                <div class="totals">
+                    <p class="flex gap-2 text-2xl">
+                        <i class="fad fa-sack-dollar dark:text-lime-600 text-lime-600 fa-swap-opacity"></i>
+                        <span>This month's Earning: </span>
+                        <span class="font-bold text-lime-600" id="monthtotal">
+                            <?php echo $monthly_total_income; ?>
+                        </span>
+                    </p>
+                </div>
             </div>
+
         </div>
         <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10">
             <?php if ($_SESSION['user'] == "admin") : ?>
@@ -103,6 +123,12 @@ $today_total_income = array_sum($column);
             url: "<?php echo $site ?>includes/ajax/todaytotal.php",
             success: function(response) {
                 $('#todaytotal').html(response);
+            }
+        });
+        $.ajax({
+            url: "<?php echo $site ?>includes/ajax/monthlytotal.php",
+            success: function(response) {
+                $('#monthtotal').html(response);
             }
         });
     }, 500);

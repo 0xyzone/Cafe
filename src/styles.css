@@ -34,7 +34,7 @@
     @apply bg-transparent px-4 py-2 text-2xl rounded-xl text-lime-600 border-2 border-current flex items-center font-bold;
   }
   .mainshadow {
-    @apply shadow-[10px_10px_8px_0px_rgba(0,0,0,0.2)];
+    @apply shadow-[5px_5px_8px_0px_rgba(0,0,0,0.2)];
   }
   .secondaryshadow {
     @apply shadow-[3px_2px_5px_0px_rgba(0,0,0,0.2)];
@@ -107,5 +107,8 @@
   }
   .darkmodetoggle {
     @apply absolute top-4 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow;
+  }
+  .totals {
+    @apply w-max flex gap-4 items-center text-stone-300 dark:text-stone-700 dark:bg-stone-300 p-4 bg-stone-700 rounded-lg mainshadow transform duration-200;
   }
 } ;
