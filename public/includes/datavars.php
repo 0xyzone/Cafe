@@ -16,8 +16,4 @@ $column = array_column($tpres, 'total_price');
 $column2 = array_column($mqres, 'total_price');
 $today_total_income = array_sum($column);
 $monthly_total = array_sum($column2);
-print_r($today_total_income);
-echo '<br>';
-echo '<br>';
-print_r($monthly_total);
 ?>

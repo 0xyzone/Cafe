@@ -43,9 +43,9 @@ $monthly_total_income = array_sum($column2);
                     <i class="fad fa-clock fa-swap-opacity text-lime-600"></i> <span id="time"></span>
                 </p>
             </div>
-            <div class="w-full flex flex-wrap gap-2">
+            <div class="w-full flex flex-wrap sm:flex-nowrap justify-around gap-2">
                 <div class="totals">
-                    <p class="flex gap-2 text-2xl">
+                    <p class="flex gap-2 2xl:text-2xl">
                         <i class="fas fa-cash-register dark:text-lime-600 text-lime-600"></i>
                         <span>Today's Total Earning: </span>
                         <span class="font-bold text-lime-600" id="todaytotal">
@@ -54,7 +54,7 @@ $monthly_total_income = array_sum($column2);
                     </p>
                 </div>
                 <div class="totals">
-                    <p class="flex gap-2 text-2xl">
+                    <p class="flex gap-2 2xl:text-2xl">
                         <i class="fad fa-sack-dollar dark:text-lime-600 text-lime-600 fa-swap-opacity"></i>
                         <span>This month's Earning: </span>
                         <span class="font-bold text-lime-600" id="monthtotal">
@@ -63,7 +63,6 @@ $monthly_total_income = array_sum($column2);
                     </p>
                 </div>
             </div>
-
         </div>
         <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10">
             <?php if ($_SESSION['user'] == "admin") : ?>
@@ -108,6 +107,27 @@ $monthly_total_income = array_sum($column2);
                     <i class="fad fa-clock fa-swap-opacity text-lime-600"></i> <span id="time"></span>
                 </p>
             </div>
+            <div class="w-full flex flex-wrap sm:flex-nowrap justify-around gap-2">
+                <div class="totals">
+                    <p class="flex gap-2 2xl:text-2xl">
+                        <i class="fas fa-cash-register dark:text-lime-600 text-lime-600"></i>
+                        <span>Today's Total Earning: </span>
+                        <span class="font-bold text-lime-600" id="todaytotal">
+                            <?php echo $today_total_income; ?>
+                        </span>
+                    </p>
+                </div>
+                <div class="totals">
+                    <p class="flex gap-2 2xl:text-2xl">
+                        <i class="fad fa-sack-dollar dark:text-lime-600 text-lime-600 fa-swap-opacity"></i>
+                        <span>This month's Earning: </span>
+                        <span class="font-bold text-lime-600" id="monthtotal">
+                            <?php echo $monthly_total_income; ?>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <p class="text-gray-500 text-center animate-pulse">Login to view more!</p>
         </div>
     </div>
 <?php endif; ?>

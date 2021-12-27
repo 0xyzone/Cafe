@@ -58,7 +58,7 @@ if (isset($_POST['update'])) {
 }
 ?>
 
-<?php if ($_SESSION['user'] == "admin"):?>
+<?php if (isset($_SESSION['user']) && ($_SESSION['user'] == "admin")):?>
 
 <!-- Users list -->
 <?php if (isset($_GET['option']) || (isset($_SESSION['message'])) || (isset($err))) : ?>
@@ -141,13 +141,14 @@ if (isset($_POST['update'])) {
 <?php endif; ?>
 <!-- end Editing a user -->
 <?php endif; ?>
-<?php if ($_SESSION['user'] != "admin"):?>
-<div class="bodymain">
+<?php if (!isset($_SESSION['user'])):?>
+<div class="bodymain flex-col gap-12">
     <p class="text-4xl lg:text-6xl 2xl:text-8xl flex flex-col justify-center items-center gap-10 transform duration-300">
         <i class="fad fa-hand-sparkles text-6xl 2xl:text-9xl text-lime-700 dark:text-green-300 relative"><span class=" absolute top-0 right-0"><i class="fad fa-hand-sparkles text-6xl 2xl:text-9xl animate-ping text-gray-700 dark:text-gray-500 opacity-30"></i></span></i>
 
         Wait! Are you lost buddy?
     </p>
+    <a href="<?php echo $site; ?>" class="text-gray-400 dark:text-gray-600 text-xl lg:text-2xl">< Go back to home</a>
 </div>
 <?php endif; ?>
 <script>

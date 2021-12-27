@@ -13,7 +13,7 @@
     @apply 2xl:text-2xl text-sm flex flex-col justify-between gap-2;
   }
   .forms {
-    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-8 pt-8 pb-10 w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 rounded-xl flex flex-col gap-2 transform duration-300 mainshadow;
+    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-8 pt-8 pb-10 w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 rounded-xl flex flex-col gap-2 transform duration-300 mainshadow accent-lime-600;
   }
   .fields {
     @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-green-700 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none outline-none hover:mainshadow disabled:text-gray-400 disabled:dark:text-gray-500 disabled:dark:bg-gray-800/50 disabled:bg-stone-300 disabled:hover:shadow-none;
@@ -109,6 +109,6 @@
     @apply absolute top-4 bg-gray-800 text-white dark:bg-gray-200 font-bold dark:text-gray-800 rounded-full w-10 h-10 z-50 secondaryshadow;
   }
   .totals {
-    @apply w-max flex gap-4 items-center text-stone-300 dark:text-stone-700 dark:bg-stone-300 p-4 bg-stone-700 rounded-lg mainshadow transform duration-200;
+    @apply lg:w-6/12 w-full flex gap-4 items-center text-stone-300 dark:text-stone-700 dark:bg-stone-300 p-4 bg-stone-700 rounded-lg mainshadow transform duration-200;
   }
 } ;

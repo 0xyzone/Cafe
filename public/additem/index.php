@@ -53,7 +53,7 @@ if (!isset($_SESSION['user'])) {
                         $catquery = mysqli_query($db, "SELECT * FROM category ORDER BY ID ASC")
                         ?>
                         <?php foreach ($catquery as $row) : ?>
-                            <option value="<?php echo $row['category']; ?>" class="text-xl dark:odd:bg-gray-500 even:bg-gray-700" id="<?php echo $row['html_id']; ?>"><?php echo $row['category']; ?></option>
+                            <option value="<?php echo $row['category']; ?>" class="text-xl hover:bg-lime-600" id="<?php echo $row['html_id']; ?>"><?php echo $row['category']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -90,12 +90,16 @@ if (!isset($_SESSION['user'])) {
                 </thead>
                 <tbody id="categories">
                     <?php foreach ($usersql as $row) : ?>
+                        <?php
+                        $dt = strtotime($row['created_on']);
+                        $insdate = date('jS M, Y h:i A', $dt);
+                        ?>
                         <tr class='tbrow'>
                             <td class="px-2 text-right"><?php echo $row['ID']; ?></td>
                             <td class="px-2 text-left"><?php echo $row['item_name']; ?></td>
                             <td class="px-6 text-left smhidden"><?php echo $row['category']; ?></td>
                             <td class="px-2 text-center"><span>₹ </span><?php echo $row['price']; ?></td>
-                            <td class="px-2 text-center smhidden"><?php echo $row['created_on']; ?></td>
+                            <td class="px-2 text-center smhidden"><?php echo $insdate; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
