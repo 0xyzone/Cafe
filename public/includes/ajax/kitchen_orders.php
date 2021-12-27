@@ -8,9 +8,9 @@ $sql = mysqli_query($db, "SELECT * FROM orders WHERE kitchen='Notify'");
 $numrow = mysqli_num_rows($sql);
 if (mysqli_num_rows($sql) > 0){
     foreach ($qry as $raw){
-        echo '<input type="hidden" name="order" value="'.$raw['order_no'].'">
-        <button name="process">Process</button>';
+        $odrno = $raw['order_no'];
+        echo '<input type="hidden" name="order" value="'.$odrno.'">
+        <button class="btn-primary" name="process">Process</button>';
     }
 }
-echo mysqli_num_rows($sql);
 ?>

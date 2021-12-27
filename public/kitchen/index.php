@@ -13,17 +13,14 @@ if ($_POST) {
     }
 }
 ?>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-<?php if (mysqli_num_rows($qry) >= 1){ ?>
-    <?php foreach ($qry as $rw) : ?>
-        <input type="hidden" name="order" value="<?php echo $rw['order_no']; ?>">
-        <button name="process">Process</button>
-    <?php endforeach; } ?>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" id="notifyfields">
 </form>
 <div id="notify">
 
 </div>
-
+<audio autoplay loop=off id="audio">
+    <source src="<?php echo $site . '/includes/audio/ding.wav'; ?>" type="audio/wav">
+</audio>
 <script>
     setInterval(function() {
         $.ajax({
@@ -35,8 +32,13 @@ if ($_POST) {
         $.ajax({
             url: "<?php echo $site ?>includes/ajax/kitchen_orders.php",
             success: function(response) {
-                $('#notify').html(response);
+                $('#notifyfields').html(response);
             }
         });
     }, 1000);
+    if ($('#notify').html() > 0) {
+        $('#audio').play();
+    } else {
+        $('#audio').pause();
+    }
 </script>
