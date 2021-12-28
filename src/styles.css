@@ -21,6 +21,12 @@
   .btn-primary {
     @apply bg-lime-600 text-gray-50 dark:bg-lime-700 dark:text-gray-200 px-4 py-2 lg:text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
   }
+  .btn-process {
+    @apply bg-lime-600 text-gray-50 dark:bg-lime-700 dark:text-gray-200 px-4 py-2 rounded-xl transform duration-300;
+  }
+  .btn-end {
+    @apply bg-rose-800 text-gray-50 dark:bg-red-800 dark:text-gray-200 px-4 py-2 rounded-xl transform duration-300;
+  }
   .btn-negetive {
     @apply bg-rose-800 text-gray-50 dark:bg-red-800 dark:text-gray-200 px-4 py-2 lg:text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
   }

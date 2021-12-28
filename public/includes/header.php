@@ -18,6 +18,12 @@ $customcss = $site . 'css/custom.css';
     <link rel="stylesheet" href="<?php echo $site . 'css/css/all.css' ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/push.js"></script>
+    <script src="../js/push.js.map"></script>
+    <script src="../js/push.min.js"></script>
+    <script src="../js/push.min.js.map"></script>
+    <script src="../js/serviceWorker.min.js"></script>
+    <script src="../js/serviceWorker.min.js.map"></script>
     <link rel="shortcut icon" href="<?php echo $site; ?>includes/img/logo.ico" type="image/x-icon">
     <title>
         <?php
