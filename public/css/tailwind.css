@@ -1504,6 +1504,10 @@ tbody:before {
   width: 6rem;
 }
 
+.w-6\/12 {
+  width: 50%;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -1649,6 +1653,10 @@ tbody:before {
 
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .justify-self-center {
@@ -1990,6 +1998,22 @@ tbody:before {
   color: rgb(22 101 52 / var(--tw-text-opacity));
 }
 
+.first\:animate-\[fadeInTop\]:first-child {
+  -webkit-animation: fadeInTop;
+          animation: fadeInTop;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.first\:animate-pulse:first-child {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .first\:justify-center:first-child {
   justify-content: center;
 }
@@ -2002,6 +2026,11 @@ tbody:before {
 .first\:bg-lime-800:first-child {
   --tw-bg-opacity: 1;
   background-color: rgb(63 98 18 / var(--tw-bg-opacity));
+}
+
+.first\:bg-slate-600:first-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 .even\:bg-gray-700:nth-child(even) {
@@ -2193,6 +2222,10 @@ tbody:before {
 @media (min-width: 1280px) {
   .xl\:-mb-16 {
     margin-bottom: -4rem;
+  }
+
+  .xl\:w-6\/12 {
+    width: 50%;
   }
 }
 
