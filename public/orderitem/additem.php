@@ -25,7 +25,7 @@ if (isset($_POST['additem'])) {
         header('location:' . $site . 'orderitem?orderno=' . $orderno);
     } else {
         $stmt = $db->prepare('INSERT INTO orderitems(order_no, item, qty, total_price) VALUES (?, ?, ?, ?)');
-        $stmt->bind_param('isii', $orderno, $item, $qty, $tprice);
+        $stmt->bind_param('issi', $orderno, $item, $qty, $tprice);
         $stmt->execute();
         $stmt->close();
         $db->close();
@@ -56,9 +56,9 @@ if (isset($_POST['additem'])) {
             </div>
             <div class="forminputs">
                 <label for="qty">Qty.</label>
-                <input type="number" name="qty" id="qty" class="fields" required>
+                <input type="text" name="qty" id="qty" class="fields" required autocomplete="off">
             </div>
-            <button class="btn-primary" name="additem" id="additem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
+            <button class="btn-primary mt-4" name="additem" id="additem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
         </form>
     </div>
 <?php endif; ?>

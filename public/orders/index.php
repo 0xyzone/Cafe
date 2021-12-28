@@ -27,7 +27,7 @@ if (isset($_POST['addorderitem'])) {
     $ipricesql = mysqli_query($db, "SELECT * FROM menu WHERE item_name='$item'");
     $iprice = mysqli_fetch_array($ipricesql);
     $tprice = $qty * $iprice['price'];
-    $stmt->bind_param('isii', $rowLastId, $item, $qty, $tprice);
+    $stmt->bind_param('issi', $rowLastId, $item, $qty, $tprice);
     $stmt->execute();
     $stmt->close();
     $db->close();
@@ -62,7 +62,7 @@ if (isset($_GET['cancel'])) {
                 </div>
                 <div class="forminputs">
                     <label for="qty">Qty.</label>
-                    <input type="number" name="qty" id="qty" class="fields" required>
+                    <input type="text" name="qty" id="qty" class="fields" required autocomplete="off">
                 </div>
                 <div class="flex gap-2 mt-4">
                     <button class="btn-primary" name="addorderitem" id="addorderitem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>

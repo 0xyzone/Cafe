@@ -8,8 +8,13 @@ $qry = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_
         <div class="px-4">
             <div class="bg-gray-300 rounded-lg px-4 py-4 flex flex-col gap-2">
                 <div class="flex flex-col">
+                    <?php
+                    date_default_timezone_set('Asia/Kathmandu');
+                    $d = strtotime($row['created_on']);
+                    $dt = date('jS M, Y h:i A', $d);
+                    ?>
                     <span class="text-2xl font-bold">Order #<?php echo $row['order_no']; ?></span>
-                    2021-12-01 2:22 AM
+                    <?php echo $dt; ?>
                 </div>
                 <table class="table table-fixed w-full">
                     <thead>
@@ -22,17 +27,17 @@ $qry = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_
                         <?php
                         $ono = $row['order_no'];
                         $itemqry = $db->query("SELECT * FROM orderitems WHERE order_no=$ono");
-                        foreach ($itemqry as $nrow){
+                        foreach ($itemqry as $nrow) {
                         ?>
-                        <tr>
-                            <td class="text-left pl-4"><?php echo $nrow['item']; ?></td>
-                            <td class="text-left pl-4"><?php echo $nrow['qty']; ?></td>
-                        </tr>
+                            <tr>
+                                <td class="text-left pl-4"><?php echo $nrow['item']; ?></td>
+                                <td class="text-left pl-4"><?php echo $nrow['qty']; ?></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
         </div>
-        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&process=1' ?>" class="transform duration-300 btn-process absolute right-8 top-4 justify-self-center">Start</a>
+        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&process=1' ?>" class="transform duration-300 btn-process absolute right-8 top-4 justify-self-center">Start process</a>
     </div>
 <?php endforeach; ?>

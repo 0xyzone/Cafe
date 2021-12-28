@@ -12,6 +12,11 @@ if (isset($_GET['process'])) {
     $ordernum = $_GET['order'];
     $db->query("UPDATE orders SET kitchen='$process' WHERE order_no='$ordernum'");
 }
+if (isset($_GET['done'])) {
+    $process = "Done";
+    $ordernum = $_GET['order'];
+    $db->query("UPDATE orders SET kitchen='$process' WHERE order_no='$ordernum'");
+}
 
 ?>
 <div class="bodymain">
