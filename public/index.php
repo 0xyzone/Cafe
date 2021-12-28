@@ -1,5 +1,5 @@
 <?php
-$title = "Homepage";
+$title = "Pack Gareko - Cafe";
 include 'includes/main.php';
 $date = date('Y-m-d');
 $tpquery = mysqli_query($db, "SELECT total_price FROM orders WHERE created_on LIKE '$date%'");
@@ -22,6 +22,9 @@ $monthly_total_income = array_sum($column2);
     <?php
     if ($_SESSION['user'] == "kitchenmaster"){
         header('location:'.$site.'kitchen');
+    }
+    if ($_SESSION['user'] == "public"){
+        header('location:'.$site.'publicscreen');
     }
     ?>
     <div class="lg:w-6/12 w-8/12 h-full mx-auto">

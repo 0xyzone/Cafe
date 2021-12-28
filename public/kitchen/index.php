@@ -1,6 +1,8 @@
 <?php
 $title = "Kitchen";
 include '../includes/main.php';
+date_default_timezone_set('Asia/Kathmandu');
+$currentDate = date('Y-m-d H-i-s');
 if (!isset($_SESSION['user'])) {
     header('location:' . $site);
 }
@@ -10,12 +12,12 @@ $qryres = mysqli_fetch_array($qry);
 if (isset($_GET['process'])) {
     $process = "Processing";
     $ordernum = $_GET['order'];
-    $db->query("UPDATE orders SET kitchen='$process' WHERE order_no='$ordernum'");
+    $db->query("UPDATE orders SET kitchen='$process',started='$currentDate' WHERE order_no='$ordernum'");
 }
 if (isset($_GET['done'])) {
     $process = "Done";
     $ordernum = $_GET['order'];
-    $db->query("UPDATE orders SET kitchen='$process' WHERE order_no='$ordernum'");
+    $db->query("UPDATE orders SET kitchen='$process',completed='$currentDate' WHERE order_no='$ordernum'");
 }
 
 ?>

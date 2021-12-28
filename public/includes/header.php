@@ -55,7 +55,7 @@ $currenturl = $_SERVER["PHP_SELF"];
                                                                 } ?>" id="toggle"><i class="fad fa-sign-in-alt text-2xl"></i></a>
     <?php endif; ?>
     <?php endif; ?>
-    <div class="flex justify-center pt-8 w-full">
+    <div class="flex justify-center pt-8 w-full fadeIn">
         <a href="<?php echo $site; ?>">
             <img src="<?php echo $site;?>/includes/img/logo.ico" alt="logo" class="w-24 xl:-mb-16">
         </a>

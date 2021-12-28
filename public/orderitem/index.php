@@ -16,7 +16,7 @@ if (isset($_POST['confirm'])) {
     $ono = $_POST['orderno'];
     $tpt = $_POST['totalprice'];
     $db->query("UPDATE orders SET status='Paid',total_price='$tpt',kitchen='Notify' WHERE order_no='$ono'");
-    header('location:' . $site);
+    header('location:' . $site.'orders');
 }
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];

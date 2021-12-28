@@ -3,58 +3,58 @@ SVG Icons - svgicons.sparkk.fr
 ----- */
 
 .svg-icon {
-    width: 1em;
-    height: 1em;
-  }
-  
-  .svg-icon path,
-  .svg-icon polygon,
-  .svg-icon rect {
-    fill: #4691f6;
-  }
-  
-  .svg-icon circle {
-    stroke: #4691f6;
-    stroke-width: 1;
-  }
+  width: 1em;
+  height: 1em;
+}
 
-  .fadeInRight {
-    animation: fadeInRight 1s;
-  }
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+.fadeInRight {
+  animation: fadeInRight 1s;
+}
 @keyframes fadeInRight {
   0% {
-      opacity: 0;
-      transform: translateX(50px);
+    opacity: 0;
+    transform: translateX(50px);
   }
   100% {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
-} 
- .fadeInLeft {
+}
+.fadeInLeft {
   animation: fadeInLeft 1s;
 }
 @keyframes fadeInLeft {
-0% {
+  0% {
     opacity: 0;
     transform: translateX(-50px);
-}
-100% {
+  }
+  100% {
     opacity: 1;
     transform: translateX(0);
+  }
 }
-} 
- .fadeInTop {
+.fadeInTop {
   animation: fadeInTop 1s;
 }
 @keyframes fadeInTop {
   0% {
-     opacity: 0;
-     transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-     opacity: 1;
-     transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -63,11 +63,25 @@ SVG Icons - svgicons.sparkk.fr
 }
 @keyframes fadeInBottom {
   0% {
-     opacity: 0;
-     transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-     opacity: 1;
-     transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
   }
 }

@@ -29,6 +29,14 @@ if (isset($_GET['option'])) {
         $option = $site . 'manageitem';
         header('location:' . $option);
     }
+    if ($_GET['option'] == "kitchen") {
+        $option = $site . 'kitchen';
+        header('location:' . $option);
+    }
+    if ($_GET['option'] == "public") {
+        $option = $site . 'publicscreen';
+        header('location:' . $option);
+    }
 }
 
 //deleting a user
