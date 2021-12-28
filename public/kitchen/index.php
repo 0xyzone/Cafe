@@ -37,28 +37,9 @@ if (isset($_GET['done'])) {
         </div>
     </div>
 </div>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-</form>
-<div id="noti">
-    <p id="notify">
-    </p>
-</div>
 
 <script>
     setInterval(function() {
-        $.ajax({
-            url: "<?php echo $site ?>includes/ajax/kitchen.php",
-            success: function(response) {
-                $('#notify').html(response);
-                var trimed = $.trim($('#notify').html());
-            }
-        });
-        $.ajax({
-            url: "<?php echo $site ?>includes/ajax/kitchen_orders.php",
-            success: function(response) {
-                $('#notifyfields').html(response);
-            }
-        });
         $.ajax({
             url: "<?php echo $site ?>includes/ajax/neworder.php",
             success: function(response) {

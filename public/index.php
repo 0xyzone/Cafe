@@ -19,7 +19,7 @@ $column2 = array_column($mqres, 'total_price');
 $monthly_total_income = array_sum($column2);
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
-    <div class="lg:w-6/12 w-8/12 h-full mx-auto pt-16">
+    <div class="lg:w-6/12 w-8/12 h-full mx-auto">
         <div class="flex flex-col gap-4 fadeInLeft pt-10 lg:pt-20">
             <h1 class="text-4xl lg:text-6xl">
                 <?php
@@ -83,7 +83,7 @@ $monthly_total_income = array_sum($column2);
         </div>
     </div>
 <?php else : ?>
-    <div class="lg:w-6/12 w-8/12 h-full mx-auto pt-16">
+    <div class="lg:w-6/12 w-8/12 h-full mx-auto">
         <div class="flex flex-col gap-4 fadeInLeft pt-10 lg:pt-20">
             <h1 class="text-4xl lg:text-6xl">
                 <?php
