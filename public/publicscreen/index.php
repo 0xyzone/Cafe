@@ -3,13 +3,19 @@ $title = "Public Screen";
 include '../includes/main.php';
 date_default_timezone_set('Asia/Kathmandu');
 $date = date('Y-m-d');
-$qry = $db->query("SELECT * FROM orders WHERE created_on LIKE '$date%' && kitchen = 'Done' ORDER BY order_no DESC");
+$time = date("g").'<span class="animate-pulse">:</span>'.date("i A");
+$qry = $db->query("SELECT * FROM orders WHERE created_on LIKE '$date%' && kitchen = 'Done' ORDER BY order_no DESC LIMIT 3");
 ?>
 <div class="bodymain">
     <div class="container mx-auto">
         <div class="lg:w-6/12 mx-auto text-center flex flex-col gap-8">
-            <div class="bg-lime-600 text-gray-100 dark:bg-lime-600 px-4 py-2 rounded-lg text-4xl font-bold w-full fadeInTop">
-                Completed Orders
+            <div class="bg-lime-600 text-gray-100 dark:bg-lime-600 px-4 py-2 rounded-lg text-4xl font-bold w-full fadeInTop flex justify-between items-center">
+                <span>Completed Orders</span>
+                <div class="text-2xl">
+                    <i class="fad fa-clock fa-swap-opacity"></i>
+                <span id="time" class="tracking-widest font-medium text-stone-200"><?php echo $time; ?></span>
+                </div>
+                
             </div>
             <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300 fadeInBottom" id="done">
                 <?php foreach ($qry as $row) : ?>
@@ -44,4 +50,12 @@ $qry = $db->query("SELECT * FROM orders WHERE created_on LIKE '$date%' && kitche
             }
         });
     }, 1000);
+    setInterval(function() {
+        $.ajax({
+            url: "<?php echo $site ?>includes/ajax/time.php",
+            success: function(response) {
+                $('#time').html(response);
+            }
+        });
+    }, 1500);
 </script>

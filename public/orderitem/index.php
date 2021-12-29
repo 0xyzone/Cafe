@@ -38,7 +38,7 @@ if (isset($_GET['cancel'])) {
 ?>
 <div class="bodymain flex-col gap-2">
     <div class="tables gap-10">
-        <div class="flex justify-between gap-10">
+        <div class="flex justify-between items-center gap-10">
             <div class="title flex flex-col gap-2">
                 <div>
                     <?php if ($status == "Paid") : ?>
@@ -114,6 +114,12 @@ if (isset($_GET['cancel'])) {
                     <button class="btn-primary" name='confirm'>Confirm order</button>
                     <a href="<?php echo $site . 'orderitem?cancel=' . $orderno; ?>" class="btn-negetive">Cancel</a>
                 </form>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($_GET['search'])):?>
+            <div class="flex justify-end gap-4">
+                <a href="<?php echo $site . 'search'?>" class="btn-process text-xl transform duration-300 hover:mainshadow hover:-translate-y-1"><i class="fab fa-searchengin"></i> Search Again</a>
+                <a href="<?php echo $site . 'orderitem?cancel=' . $orderno; ?>" class="btn-negetive">Cancel</a>
             </div>
         <?php endif; ?>
     </div>

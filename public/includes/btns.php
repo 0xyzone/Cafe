@@ -21,5 +21,7 @@ $reception = array(
     // [2] = Button Link (route)
     // [3] = Button id
     array('Take Orders','<i class="fad fa-edit"></i>','take_orders','take_orders'),
+    array('Kitchen View','<i class="fad fa-hat-chef"></i>','kitchen','kitchen'),
+    array('Public View','<i class="fad fa-tv"></i>','public','public'),
 )
 ?>
