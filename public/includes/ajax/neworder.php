@@ -1,11 +1,11 @@
 <?php
 include '../dbconnection.php';
 include '../globalvar.php';
-$qry = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_no DESC");
+$qrynew = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_no DESC");
 ?>
-<?php foreach ($qry as $row) : ?>
+<?php foreach ($qrynew as $row) : ?>
     <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300">
-        <div class="px-4">
+        <div class="">
             <div class="bg-gray-300 rounded-lg px-4 py-4 flex flex-col gap-2">
                 <div class="flex flex-col">
                     <?php
@@ -38,6 +38,6 @@ $qry = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_
                 </table>
             </div>
         </div>
-        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&process=1' ?>" class="transform duration-300 btn-process absolute right-8 top-4 justify-self-center">Start process</a>
+        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&process=1' ?>" class="transform duration-300 btn-process absolute right-4 top-4 justify-self-center">Start process</a>
     </div>
 <?php endforeach; ?>

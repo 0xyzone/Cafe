@@ -1,6 +1,9 @@
 <?php
 $title = "Kitchen";
 include '../includes/main.php';
+$qrynew = $db->query("SELECT * FROM orders WHERE kitchen = 'Notify' ORDER BY order_no DESC");
+$qrypending = $db->query("SELECT * FROM orders WHERE kitchen = 'Processing' ORDER BY order_no ASC");
+
 date_default_timezone_set('Asia/Kathmandu');
 $currentDate = date('Y-m-d H-i-s');
 if (!isset($_SESSION['user'])) {
@@ -22,20 +25,18 @@ if (isset($_GET['done'])) {
 
 ?>
 <div class="bodymain">
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 2xl:px-0">
         <div class="flex flex-col gap-4">
-            <div class="bg-stone-700 text-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg text-xl font-bold">
+            <div class="bg-cyan-600 text-gray-100 dark:bg-cyan-700 px-4 py-2 rounded-lg text-xl font-bold">
                 New Orders
             </div>
-            <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="neworders">
-            </div>
+            <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="neworders"></div>
         </div>
         <div class="flex flex-col gap-4">
-            <div class="bg-stone-700 text-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg text-xl font-bold">
+            <div class="bg-yellow-600 text-gray-100 dark:bg-yellow-600 px-4 py-2 rounded-lg text-xl font-bold">
                 Processing Orders
             </div>
-            <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="processing">
-            </div>
+            <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="processing"></div>
         </div>
     </div>
 </div>
