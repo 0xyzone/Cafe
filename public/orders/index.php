@@ -66,7 +66,7 @@ if (isset($_GET['cancel'])) {
                 </div>
                 <div class="flex gap-2 mt-4">
                     <button class="btn-primary" name="addorderitem" id="addorderitem"><i class="fad fa-plus-square fa-swap-opacity"></i> Add</button>
-                    <a href="<?php echo $site . 'orderitem?cancel=' . $rowLastId; ?>" class="btn-negetive">Cancel</a>
+                    <a href="<?php echo $site . 'orderitem?cancel=' . $rowLastId; ?>" class="btn-negetive"  onclick="return confirm('Are you sure you want to cancel?')">Cancel</a>
                 </div>
 
             </form>

@@ -10,7 +10,7 @@ $qrypending = $db->query("SELECT * FROM orders WHERE kitchen = 'Processing' ORDE
     $dt = date('jS M, Y h:i A', $d);
     ?>
     <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300">
-        <div class="2xl:px-4">
+        <div class="">
             <div class="bg-gray-300 rounded-lg px-4 py-4 flex flex-col gap-2">
                 <div class="flex flex-col">
                     <span class="text-2xl font-bold">Order #<?php echo $row['order_no']; ?></span>
@@ -38,6 +38,6 @@ $qrypending = $db->query("SELECT * FROM orders WHERE kitchen = 'Processing' ORDE
                 </table>
             </div>
         </div>
-        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&done=1' ?>" class="transform duration-300 btn-done absolute right-2 top-4 justify-self-center">Done</a>
+        <a href="<?php echo $site . 'kitchen?order=' . $row['order_no'] . '&done=1' ?>" class="transform duration-300 btn-done absolute right-4 top-4 justify-self-center">Done</a>
     </div>
 <?php endforeach; ?>

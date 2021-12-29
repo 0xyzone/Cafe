@@ -7,7 +7,7 @@
     @apply flex items-center justify-center w-full h-full pt-24;
   }
   .tables {
-    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 sm:w-auto px-8 pt-8 py-10 rounded-xl flex flex-col gap-4 transform duration-300 mainshadow w-11/12;
+    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 sm:w-auto px-4 2xl:px-8 pt-8 py-10 rounded-xl flex flex-col gap-4 transform duration-300 mainshadow w-11/12;
   }
   .searchresults {
     @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-2 2xl:px-8 py-4 flex flex-col gap-4 transform duration-300 mainshadow;
@@ -19,7 +19,7 @@
     @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-8 pt-8 pb-10 w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 rounded-xl flex flex-col gap-2 transform duration-300 mainshadow accent-lime-600;
   }
   .fields {
-    @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-green-700 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none outline-none hover:mainshadow disabled:text-gray-400 disabled:dark:text-gray-500 disabled:dark:bg-gray-800/50 disabled:bg-stone-300 disabled:hover:shadow-none;
+    @apply text-gray-700 rounded-lg dark:bg-gray-600 dark:text-gray-50 w-full placeholder:text-green-700 placeholder:opacity-50 dark:placeholder:text-lime-500 transform duration-300 focus:ring-lime-500 focus:ring-2 focus:border-none focus:outline-none hover:mainshadow disabled:text-gray-400 disabled:dark:text-gray-500 disabled:dark:bg-gray-800/50 disabled:bg-stone-300 disabled:hover:shadow-none;
   }
   .btn-primary {
     @apply bg-lime-600 text-gray-50 dark:bg-lime-700 dark:text-gray-200 px-4 py-2 lg:text-2xl rounded-xl transform duration-300 hover:mainshadow hover:-translate-y-1 w-max;
