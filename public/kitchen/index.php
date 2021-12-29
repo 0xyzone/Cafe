@@ -27,13 +27,13 @@ if (isset($_GET['done'])) {
 <div class="bodymain">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 2xl:px-0">
         <div class="flex flex-col gap-4">
-            <div class="bg-cyan-600 text-gray-100 dark:bg-cyan-700 px-4 py-2 rounded-lg text-xl font-bold">
+            <div class="bg-cyan-600 text-gray-100 dark:bg-cyan-700 px-4 py-2 rounded-lg text-xl font-bold fadeInLeft">
                 New Orders
             </div>
             <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="neworders"></div>
         </div>
         <div class="flex flex-col gap-4">
-            <div class="bg-yellow-600 text-gray-100 dark:bg-yellow-600 px-4 py-2 rounded-lg text-xl font-bold">
+            <div class="bg-yellow-600 text-gray-100 dark:bg-yellow-600 px-4 py-2 rounded-lg text-xl font-bold fadeInRight">
                 Processing Orders
             </div>
             <div class="flex flex-col gap-2 relative w-auto dark:text-gray-800 transform duration-300" id="processing"></div>

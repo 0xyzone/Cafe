@@ -26,6 +26,7 @@ $currenturl = $_SERVER["PHP_SELF"];
     <script src="../js/serviceWorker.min.js"></script>
     <script src="../js/serviceWorker.min.js.map"></script>
     <link rel="shortcut icon" href="<?php echo $site; ?>includes/img/logo.ico" type="image/x-icon">
+    <link rel="favicon" href="<?php echo $site; ?>includes/img/logo.ico" type="image/x-icon">
     <title>
         <?php
         if (isset($title)) {
@@ -38,6 +39,7 @@ $currenturl = $_SERVER["PHP_SELF"];
 </head>
 
 <body class="w-full h-full bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls">
+    
 <?php if ($currenturl != "/cafe/public/publicscreen/index.php"):?>
     <div class="">
         <button class="darkmodetoggle <?php 
@@ -48,7 +50,7 @@ $currenturl = $_SERVER["PHP_SELF"];
                                         } ?>" id="toggle" value="dark"><i class="far fa-moon-stars text-2xl"></i></button>
     </div>
     <?php if (isset($_SESSION['user'])) : ?>
-        <a href="<?php echo $site . 'security/logout.php' ?>" class="loginout" id="toggle" title="Logout"><i class="fad fa-sign-out-alt text-2xl"></i></a>
+        <a href="<?php echo $site . 'security/logout.php' ?>" class="loginout" id="toggle" title="Logout" onclick="return confirm('Are you sure you want to logout?')"><i class="fad fa-sign-out-alt text-2xl"></i></a>
     <?php else : ?>
         <a href="<?php echo $site . 'login' ?>" class="loginout <?php if ($currenturl == "/cafe/public/login/index.php") {
                                                                     echo "hidden";
