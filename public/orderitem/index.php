@@ -118,7 +118,6 @@ if (isset($_GET['cancel'])) {
         <?php endif; ?>
         <?php if (isset($_GET['search'])):?>
             <div class="flex justify-end gap-4">
-                <a href="<?php echo $site . 'search'?>" class="btn-process text-xl transform duration-300 hover:mainshadow hover:-translate-y-1"><i class="fab fa-searchengin"></i> Search Again</a>
                 <a href="<?php echo $site . 'orderitem?cancel=' . $orderno; ?>" class="btn-negetive">Cancel</a>
             </div>
         <?php endif; ?>

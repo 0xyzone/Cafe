@@ -9,6 +9,9 @@
   .tables {
     @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 sm:w-auto px-8 pt-8 py-10 rounded-xl flex flex-col gap-4 transform duration-300 mainshadow w-11/12;
   }
+  .searchresults {
+    @apply bg-zinc-300 text-gray-600 dark:text-gray-400 dark:bg-gray-700 px-2 2xl:px-8 py-4 flex flex-col gap-4 transform duration-300 mainshadow;
+  }
   .forminputs {
     @apply 2xl:text-2xl text-sm flex flex-col justify-between gap-2;
   }

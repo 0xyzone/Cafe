@@ -86,9 +86,6 @@ $monthly_total_income = array_sum($column2);
                         <?php echo $btn['0'] ?>
                     </a>
                 <?php endforeach; ?>
-                <a href="<?php echo $site . 'search'; ?>" class="bigbtn col-span-2 justify-center">
-                    <i class="fab fa-searchengin"></i> Search
-                </a>
             <?php else : ?>
                 <?php foreach ($reception as $btn) : ?>
                     <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-800 first:col-span-0 first:2xl:col-span-2 first:justify-center" id="<?php echo $btn['3'] ?>">
@@ -96,9 +93,6 @@ $monthly_total_income = array_sum($column2);
                         <?php echo $btn['0'] ?>
                     </a>
                 <?php endforeach; ?>
-                <a href="<?php echo $site . 'search'; ?>" class="bigbtn col-span-2 justify-center">
-                    <i class="fab fa-searchengin"></i> Search
-                </a>
             <?php endif; ?>
         </div>
     </div>
