@@ -20,13 +20,14 @@ $monthly_total_income = array_sum($column2);
 ?>
 <?php if (isset($_SESSION['user'])) : ?>
     <?php
-    if ($_SESSION['user'] == "kitchenmaster"){
-        header('location:'.$site.'kitchen');
+    if ($_SESSION['user'] == "kitchenmaster") {
+        header('location:' . $site . 'kitchen');
     }
-    if ($_SESSION['user'] == "public"){
-        header('location:'.$site.'publicscreen');
+    if ($_SESSION['user'] == "public") {
+        header('location:' . $site . 'publicscreen');
     }
     ?>
+
     <div class="lg:w-6/12 w-8/12 h-full mx-auto">
         <div class="flex flex-col gap-4 fadeInLeft pt-10 lg:pt-20">
             <h1 class="text-4xl lg:text-6xl">
@@ -71,8 +72,13 @@ $monthly_total_income = array_sum($column2);
                     </p>
                 </div>
             </div>
+            <div class="bg-transparent rounded-full text-xl gap-2 relative">
+                <input type="number" name="searchitem" id="isearch" class="fields fadeInRight" placeholder="Search for orders..." autofocus="on" autocomplete="off">
+                <button class="text-gray-600 dark:text-stone-200 absolute top-2 right-4 z-30 transform duration-300" name="search" id="sbox"><i class="fas fa-telescope"></i></button>
+                <div class="w-full absolute top-5 z-30" id="result"></div><!-- search results -->
+            </div>
         </div>
-        <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-10">
+        <div class="w-full grid grid-cols-1 2xl:grid-cols-2 lg:gap-4 gap-2 mx-auto fadeInBottom py-5">
             <?php if ($_SESSION['user'] == "admin") : ?>
                 <?php foreach ($superadmin as $btn) : ?>
                     <a href="<?php echo $site . 'admin?option=' . $btn['2'] ?>" class="bigbtn first:bg-lime-600 first:col-span-0 first:2xl:col-span-2 first:2xl:justify-center" id="<?php echo $btn['3'] ?>">
@@ -80,7 +86,7 @@ $monthly_total_income = array_sum($column2);
                         <?php echo $btn['0'] ?>
                     </a>
                 <?php endforeach; ?>
-                <a href="<?php echo $site.'search';?>" class="bigbtn col-span-2 justify-center">
+                <a href="<?php echo $site . 'search'; ?>" class="bigbtn col-span-2 justify-center">
                     <i class="fab fa-searchengin"></i> Search
                 </a>
             <?php else : ?>
@@ -90,7 +96,7 @@ $monthly_total_income = array_sum($column2);
                         <?php echo $btn['0'] ?>
                     </a>
                 <?php endforeach; ?>
-                <a href="<?php echo $site.'search';?>" class="bigbtn col-span-2 justify-center">
+                <a href="<?php echo $site . 'search'; ?>" class="bigbtn col-span-2 justify-center">
                     <i class="fab fa-searchengin"></i> Search
                 </a>
             <?php endif; ?>
@@ -168,4 +174,24 @@ $monthly_total_income = array_sum($column2);
             }
         });
     }, 1000)
+    $(document).ready(function() {
+        $('#isearch').keyup(function() {
+            var txt = $(this).val();
+            if (txt != '') {
+                $.ajax({
+                    url: "<?php echo $site ?>includes/ajax/fetch.php",
+                    method: "post",
+                    data: {
+                        search: txt
+                    },
+                    dataType: "text",
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                });
+            } else {
+                $('#result').html('');
+            }
+        });
+    });
 </script>
