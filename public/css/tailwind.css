@@ -1453,14 +1453,6 @@ tbody:before {
   top: 1rem;
 }
 
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
 .z-30 {
   z-index: 30;
 }
@@ -1498,10 +1490,6 @@ tbody:before {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-8\/12 {
   width: 66.666667%;
 }
@@ -1534,10 +1522,6 @@ tbody:before {
 
 .w-10\/12 {
   width: 83.333333%;
-}
-
-.w-screen {
-  width: 100vw;
 }
 
 .table-auto {
@@ -1791,16 +1775,6 @@ tbody:before {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.bg-stone-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1981,11 +1955,6 @@ tbody:before {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.text-stone-800 {
-  --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
 .opacity-30 {
