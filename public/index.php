@@ -1,5 +1,5 @@
 <?php
-$title = "Pack Gareko - Cafe";
+$title = "Bento - Appetite inside a box";
 include 'includes/main.php';
 $date = date('Y-m-d');
 $tpquery = mysqli_query($db, "SELECT total_price FROM orders WHERE created_on LIKE '$date%'");

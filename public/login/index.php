@@ -16,7 +16,7 @@ include '../security/validation.php';
         <div class="flex flex-col gap-4">
             <div class="forminputs">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="fields" placeholder="Enter your username..." autocomplete="off" autofocus>
+                <input type="text" name="username" id="username" class="fields" placeholder="Enter your username..." autocomplete="off" autofocus autocapitalize="off">
             </div>
             <div class="forminputs">
                 <label for="password">Password:</label>
