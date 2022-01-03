@@ -60,16 +60,17 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $uname = $_POST['username'];
     $pw = $_POST['password'];
-    $db->query("UPDATE userbase SET username='$uname', password='$pw'");
+    $db->query("UPDATE userbase SET username='$uname', password='$pw' WHERE ID='$id'");
     $_SESSION['message'] = "User updated successfully!";
     $_SESSION['msg_time'] = time();
+    header('location:' . $site . 'admin?option=updateusers');
 }
 ?>
 
 <?php if (isset($_SESSION['user']) && ($_SESSION['user'] == "admin")):?>
 
 <!-- Users list -->
-<?php if (isset($_GET['option']) || (isset($_SESSION['message'])) || (isset($err))) : ?>
+<?php if (isset($_GET['option']) || (isset($err))) : ?>
     <?php include '../includes/alerts.php'; ?>
     <div class="bodymain fadeInTop">
         <div class="tables">

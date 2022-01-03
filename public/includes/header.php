@@ -38,7 +38,7 @@ $currenturl = $_SERVER["PHP_SELF"];
     </title>
 </head>
 
-<body class="w-full h-full bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls">
+<body class="w-full h-full bg-slate-200 dark:bg-gray-800 dark:text-gray-100 relative transform duration-300 selection:bg-lime-500 selection:text-green-800 bg-gif overflow-x-hidden overflow-y-scroll scrolls overscroll-none">
 
     <?php if ($currenturl != "/cafe/public/publicscreen/index.php") : ?>
         <div class="">

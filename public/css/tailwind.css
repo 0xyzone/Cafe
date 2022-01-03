@@ -1695,6 +1695,11 @@ tbody:before {
   overflow-y: scroll;
 }
 
+.overscroll-none {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -2186,6 +2191,10 @@ tbody:before {
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:gap-4 {
